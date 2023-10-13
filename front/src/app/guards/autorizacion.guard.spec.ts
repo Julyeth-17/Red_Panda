@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { CanMatchFn } from '@angular/router';
 
-import { autorizacionGuard } from './autorizacion.guard';
+import { autenticacionGuard } from './autorizacion.guard';
 
-describe('autorizacionGuard', () => {
-  const executeGuard: CanMatchFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => autorizacionGuard(...guardParameters));
+describe('autenticacionGuard', () => {
+  const executeGuard: CanMatchFn = (...guardParameters) =>
+      TestBed.runInInjectionContext(() => autenticacionGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
