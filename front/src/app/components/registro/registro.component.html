@@ -1,59 +1,54 @@
-<form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4 position-relative">
-    <label for="validationTooltip01" class="form-label">Nombre</label>
-    <div class="">
-      <input type="text" class="form-control" id="" required>
+<section>
+
+  <div class="container-fluid cajitaRegistro">
+    <div class="col-6 offset-6">
+      <form class="row g-2 needs-validation" novalidate>
+          <div class="col-6">
+            <input type="text" class="form-control input" id="" placeholder="NOMBRE" required>
+          </div>
+          <div class="col-6">
+            <input type="text" class="form-control input" id="" placeholder="APELLIDO" required>
+          </div>
+        <div class="col-6">
+          <select class="form-select input">
+            <option selected>GENERO</option>
+            <option value="1">Masculino</option>
+            <option value="2">Femenino</option>
+            <option value="3">39 tipos de gay</option>
+          </select>
+        </div>
+          <div class="col-6">
+            <input type="email" class="form-control input" id="" placeholder="CORREO" required>
+          </div>
+          <div class="col-6">
+            <input type="tel" class="form-control input" id="" placeholder="TELEFONO" required>
+          </div>
+          <div class="col-6">
+            <input type="password" class="form-control input" id="" placeholder="CONTRASEÑA" required>
+          </div>
+          <div class="col-6">
+            <input type="text" class="form-control input" id="" placeholder="CIUDAD" required>
+          </div>
+        <div class="col-6 ">
+          <input type="text" class="form-control input" id="" placeholder="CÓDIGO POSTAL" required>
+        </div>
+        <div class="form-check mt-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Acepto Términos y Condiciones
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Quiero recibir notificaciones, códigos de oferta y actualizaciones en mi correo
+          </label>
+        </div>
+        <div class="col-12 btnEnviar">
+          <button class="mt-4" style="width: 200px;" type="submit">ENVIAR</button>
+        </div>
+      </form>
     </div>
-  </div>
-  <div class="col-md-4 position-relative">
-    <label for="validationTooltip02" class="form-label">Apellido</label>
-    <div class="">
-      <input type="text" class="form-control" id="" required>
-    </div>
-  </div>
-  <div class="col-md-4 position-relative">
-    <label for="validationTooltipUsername" class="form-label">Correo</label>
-    <div class="">
-      <input type="email" class="form-control" id="" required>
-    </div>
-  </div>
-  <div class="col-md-4 position-relative">
-    <label for="validationTooltipUsername" class="form-label">Contraseña</label>
-    <div class="">
-      <input type="password" class="form-control" id="" required>
-    </div>
-  </div>
-  <div class="col-md-6 position-relative">
-    <label for="validationTooltip03" class="form-label">Ciudad</label>
-    <div class="">
-      <input type="text" class="form-control" id="" required>
-    </div>
-  </div>
-  <div class="col-md-6 position-relative">
-    <label for="validationTooltip03" class="form-label">Teléfono</label>
-    <div class="">
-      <input type="tel" class="form-control" id="" required>
-    </div>
-  </div>
-  <div class="col-md-3 position-relative">
-    <label for="validationTooltip05" class="form-label">Código Postal</label>
-    <input type="text" class="form-control" id="" required>
-  </div>
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Enviar</button>
   </div>
 
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Acepto Términos y Condiciones
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Quiero recibir notificaciones, códigos de oferta y actualizaciones en mi correo
-    </label>
-  </div>
-
-</form>
+</section>

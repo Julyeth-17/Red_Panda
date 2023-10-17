@@ -6,7 +6,7 @@ import { Usuario } from '../models/usuario';
 @Injectable({
     providedIn: 'root'
 })
-export class RegistroService {
+export class UsuarioService {
 
     url = 'http://localhost:3000/api/v1'
 
