@@ -1,54 +1,51 @@
-<nav class="navbar navbar-expand-lg fixed-top" id="navbarPola">
-  <div class="container">
-      <a class="navbar-brand" href="#">
-          <img src="assests/Img/logo.avif" alt="Pola del Pub" width="216" height="68"
-              class="d-inline-block align-text-top" onclick="location.href='index.html'">
-      </a>
-
-      <div class="d-flex justify-content-center align-items-center">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0 navdecoracion">
-                  <li class="nav-item">
-                      <a class="nav-link text-white"id="btn-Polas" style="position: relative;" aria-current="page">Polas</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link text-white"id="btn-Microcervecerias" style="position: relative;" >Microcervecerias</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link text-white"id="btn-Pubs" style="position: relative;" >Pubs</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link text-white"id="btn-Merch" style="position: relative;" >Merch</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link text-white" style="position: relative;" href="contactanos.html">Contáctanos</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-      <div class="d-flex justify-content-end align-items-center">
-          <button class="btn d-flex flex-column justify-content-center align-items-center"
-              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Iniciar sesión">
-              <a href="Login.html"><i class="fa-regular fa-user IHover text-dark"></i></a>
-          </button>
-          <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
-              aria-controls="offcanvasTop">
-              <i class="fa-solid fa-magnifying-glass IHover" style="color: #080808;"></i>
-          </button>
-          <button type="button" class="btn position-relative" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Pola Cart">
-              <i class="fa-solid fa-beer-mug-empty IHover" style="color: #000000;"></i>
-          </button>
-          <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-              aria-controls="offcanvasWithBothOptions"
-              class="d-block d-lg-none btn d-flex flex-column justify-content-center align-items-center"
-              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Iniciar sesión">
-              <i class="fa-solid fa-bars"></i>
-          </button>
-      </div>
-  </div>
-
+<nav class="navbar navbar-expand-lg bg-body-tertiary " style="background-color: #f7e3cb;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="http://localhost:4200/">
+            <img src="../assets/logo1.png" alt="Red Panda" style="width: 150px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Nosotros</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-search" style="color: #612a20;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart" style="color: #612a20;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-user" style="color: #612a20;"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </nav>
+
+<!-- //opcion 2  -->
+
+
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none p-2">
+        <img src="../assets/logo1.png" alt="Red Panda" style="width: 150px;">
+        <span class="fs-4">Pricing example</span>
+    </a>
+
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Perfil</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Nosotros</a>
+        <a class="py-2 link-body-emphasis text-decoration-none" href="#">Carrito</a>
+    </nav>
+    <div class="px-3">
+        <a class="btn btn-outline-primary" href="">Ingresar</a>
+    </div>
+</div>

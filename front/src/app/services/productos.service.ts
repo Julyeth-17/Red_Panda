@@ -12,18 +12,19 @@ export class ProductosService {
 
     constructor(private http: HttpClient) { }
 
-    postProducto(parametros: any):Observable<any>{
-        return this.http.post(`${this.url}/obtener-productos`, parametros) // paginacion
+
+    getProductos(): Observable<any> {
+        return this.http.get(`${this.url}/obtener-productos`)
     }
 
     getProducto(idProducto:string):Observable<any>{
-        return this.http.get(`${this.url}/buscar-productos/${idProducto}`)
+        return this.http.get(`${this.url}/obtener-producto/${idProducto}`)
     }
 
-    postProductos(producto: Productos):Observable<any>{
+    postProducto(producto: Productos):Observable<any>{
         return this.http.post(`${this.url}/crear-producto`, producto)
     }
-
+    
     putProducto(idProducto:string | null, dataProducto:Productos):Observable<any>{
         return this.http.put(`${this.url}/actualizar-productos/${idProducto}`, dataProducto)
     }
