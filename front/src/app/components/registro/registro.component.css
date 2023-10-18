@@ -1,11 +1,13 @@
-* {
-  font-family: 'karla_regular';
-}
-
-
 .cajitaRegistro {
   margin-top: 50px;
   padding: 50px;
+}
+
+.eyeicon{
+  position: relative;
+  right: -60px;
+  top: -30px;
+  cursor: pointer;
 }
 
 .row {
@@ -20,12 +22,13 @@
   /* CSS inputs */
 
 .input {
+  display: block;
   --input-focus: #2d8cf0;
   --font-color: #323232;
   --font-color-sub: #8e8b8bc2;
   --bg-color: #fff;
   --main-color: #323232;
-  width: 200px;
+  width: 250px;
   height: 40px;
   border-radius: 5px;
   border: 2px solid var(--main-color);
@@ -50,8 +53,8 @@
 
 .col-6 {
     flex: 0 0 auto;
-    width: 45%;
-    height: 50px;
+    width: 50%;
+    height: 60px;
   }
 
   /* CSS boton envio */
