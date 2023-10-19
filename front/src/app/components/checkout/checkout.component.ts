@@ -8,10 +8,27 @@ import { Productos } from "../../models/productos";
   styleUrls: ['./checkout.component.css']
 })
 
-export class CheckoutComponent {}
+export class CheckoutComponent implements OnInit{
 
 
-//     item : Productos[] = []
+      item! : Productos;
+
+      constructor(private _productosService: ProductosService) {}
+
+      ngOnInit(): void {
+
+        this._productosService.getProducto("6529fb99e57047c044f87f96")
+          .subscribe((data:any) => {
+            this.item = data;
+            console.log(data);
+            // localStorage.setItem('')
+          });
+}
+}
+
+
+
+//
 
 //     constructor(private _productos: ProductosService) {}
 
