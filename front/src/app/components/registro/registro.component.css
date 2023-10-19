@@ -1,11 +1,10 @@
 .cajitaRegistro {
-  margin-top: 50px;
   padding: 50px;
 }
 
 .eyeicon{
   position: relative;
-  right: -60px;
+  right: -85px;
   top: -30px;
   cursor: pointer;
 }

@@ -1,6 +1,6 @@
 <section>
 
-  <div class="container-fluid cajitaLogin">
+  <div class="container-fluid cajitaLogin" style="font-family: 'karla_regular';">
     <div class="col-6">
       <form (submit)="ingresoUsuario()">
         <h4 class="mb-5 text-center">Inicia Sesión</h4>
@@ -13,7 +13,7 @@
         </div>
         <div class="form-check mt-3">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault" style="font-family: 'karla_regular';">
+          <label class="form-check-label" for="flexCheckDefault">
             Recuerdame
           </label>
         </div>
@@ -21,7 +21,7 @@
           <button class="mt-4" style="width: 150px;" type="submit">ENVIAR</button>
         </div>
 
-        <h6 class="mt-4">¿No tienes una cuenta? <a href="#">Registrate aquí</a></h6>
+        <h6 class="mt-4">¿No tienes una cuenta? <a style="text-decoration: none;" routerLink="/usuario">Registrate aquí</a></h6>
 
       </form>
     </div>
