@@ -18,7 +18,7 @@ const routes: Routes = [
   { path : '**', redirectTo : '404', pathMatch : 'full'},
   {path: 'productos', component: DetalleCoreComponent},
   {path: 'producto/:id', component: DetalleCoreComponent},
-  {path:'',}
+
 ];
 
 @NgModule({
