@@ -3,7 +3,8 @@
   <div class="container-fluid cajitaRegistro">
     <div class="col-6 offset-6">
 
-      <form class="row g-2 text-center" style="font-family: 'karla_regular';" [formGroup]="formularioRegistro" (ngSubmit)="enviarFormulario()">
+      <form class="row g-2 text-center" style="font-family: 'karla_regular';" [formGroup]="formularioRegistro"
+        (ngSubmit)="enviarFormulario()">
         <h2 class="mb-4 texto">{{ tituloPagina }}</h2>
         <div class="col-6">
           <input type="text" class="input" formControlName="nombre" placeholder="NOMBRE">
@@ -23,15 +24,6 @@
           <div
             *ngIf="formularioRegistro.get('apellido')!.hasError('pattern') && formularioRegistro.get('apellido')!.touched"
             class="fw-bold text-danger">Apellido Invalido</div>
-        </div>
-
-        <div class="col-6">
-          <select class="form-select input">
-            <option selected>GENERO</option>
-            <option value="1">Masculino</option>
-            <option value="2">Femenino</option>
-            <option value="3">39 tipos de gay</option>
-          </select>
         </div>
 
         <div class="col-6">
@@ -58,18 +50,31 @@
         </div>
 
         <div class="col-6">
-          <input [type]="changetype?'password':'text'" required="" class="input" formControlName="password" placeholder="CONTRASEÑA">
+          <input [type]="changetype?'password':'text'" required="" class="input" formControlName="password"
+            placeholder="CONTRASEÑA">
           <span class="eyeicon" (click)="verpass()"><i
-            [ngClass]="visible? 'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i></span>
+              [ngClass]="visible? 'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i></span>
           <div
             *ngIf="formularioRegistro.get('password')!.hasError('required') && formularioRegistro.get('password')!.touched"
             class="fw-bold text-danger">Contraseña Requerida</div>
           <div
             *ngIf="formularioRegistro.get('password')!.hasError('pattern') && formularioRegistro.get('password')!.touched"
-            class="fw-bold text-danger">La contraseña debe contener al menos un dígito, una minúscula, una mayúscula y un caracter especial</div>
+            class="fw-bold text-danger">La contraseña debe contener al menos un dígito, una minúscula, una mayúscula y
+            un caracter especial</div>
           <div
             *ngIf="formularioRegistro.get('password')!.hasError('minlength') && formularioRegistro.get('password')!.touched"
-            class="fw-bold text-danger">La contraseña debe contener al menos 8 caracteres</div>
+            class="fw-bold text-danger bg-body-tertiary">La contraseña debe contener al menos 8 caracteres</div>
+        </div>
+
+        <div class="col-6">
+          <input type="password" required="" class="input" autocomplete="off" id="txtPass2" #txtPass2
+            (keyup)="rectificarPass()" placeholder="RECTIFICAR CONTRASEÑA">
+        </div>
+
+        <div class="d-none" #alertPass>
+          <div class="alert alert-danger" role="alert">
+            Su contraseña no coincide
+          </div>
         </div>
 
         <div class="col-6">
@@ -96,7 +101,7 @@
         </div>
 
         <div class="form-check mt-3">
-          <input class="form-check-input" type="checkbox" formControlName="newsletter">
+          <input class="form-check-input" type="checkbox" formControlName="condiciones">
           <div
             *ngIf="formularioRegistro.get('newsletter')!.hasError('required') && formularioRegistro.get('newsletter')!.touched"
             class="fw-bold text-danger">Debes aceptar los términos</div>
@@ -105,14 +110,14 @@
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" formControlName="genero">
+          <input class="form-check-input" type="checkbox" formControlName="newsletter">
           <label class="form-check-label" for="flexCheckDefault">
             Quiero recibir notificaciones, códigos de oferta y actualizaciones en mi correo
           </label>
         </div>
 
         <div class="col-12 btnEnviar">
-          <button class="mt-4" [disabled]="formularioRegistro.invalid" style="width: 200px;" type="submit">{{txtBoton}}</button>
+          <button class="mt-4" style="width: 200px;" type="submit">{{txtBoton}}</button>
         </div>
 
         <h6 class="mt-4 mb-3">
