@@ -6,6 +6,8 @@ import { autorizacionGuard } from "./guards/autorizacion.guard";
 import { CartComponent } from "./components/cart/cart.component";
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { DetalleCoreComponent} from './components/detalle-core/detalle-core.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 const routes: Routes = [
   { path : 'usuario', component: RegistroComponent},
@@ -13,8 +15,10 @@ const routes: Routes = [
   { path : 'carrito', component: CartComponent},
   { path : 'checkout', component: CheckoutComponent},
   { path : '404', component: Pagina404Component},
-  { path : '**', redirectTo : '404', pathMatch : 'full'}
-
+  { path : '**', redirectTo : '404', pathMatch : 'full'},
+  {path: 'productos', component: DetalleCoreComponent},
+  {path: 'producto/:id', component: DetalleCoreComponent},
+  {path:'',}
 ];
 
 @NgModule({
@@ -22,3 +26,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
