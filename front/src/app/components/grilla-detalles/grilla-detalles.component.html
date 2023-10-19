@@ -1,0 +1,14 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col" *ngFor="let item of listaDetalles">
+<div class="product-details">
+    <img [src]="productDetails?.imagen" alt="Producto">
+    <h2>{{ productDetails?.nombre }}</h2>
+    <p>{{ productDetails?.descripcion }}</p>
+    <p>Precio: ${{ productDetails?.precio | number: '1.2-2' }}</p>
+    <p>{{ productDetails?.unidades | number: '1.2-2' }}</p>
+    <p>{{ productDetails?.disponible }}</p>
+
+    <button (click)="addToCart(productDetails)">Agregar al Carrito</button>
+</div>
+<a [routerLink]="['/']">Volver a la Tienda</a>
+
