@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistroComponent } from './components/registro/registro.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { autorizacionGuard } from "./guards/autorizacion.guard";
 import { CartComponent } from "./components/cart/cart.component";
@@ -10,6 +11,7 @@ import { DetalleCoreComponent} from './components/detalle-core/detalle-core.comp
 import { ContactoComponent } from './components/contacto/contacto.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path : 'usuario', component: RegistroComponent},
   { path : 'inicio-sesion', component: LoginComponent},
   { path : 'carrito', component: CartComponent},
@@ -18,10 +20,10 @@ const routes: Routes = [
   { path : '**', redirectTo : '404', pathMatch : 'full'},
   {path: 'productos', component: DetalleCoreComponent},
   {path: 'producto/:id', component: DetalleCoreComponent},
-  {path:'',}
 ];
 
 @NgModule({
+
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
