@@ -63,53 +63,69 @@ export class RegistroComponent {
 
   enviarFormulario() {
     let registroData: Usuario = this.formularioRegistro.value;
-    console.log(this.id)
+    console.log(registroData)
 
     if (this.id == null) {
-      this._usuarioService.postUsuario(registroData).subscribe(data => {
-        Swal.fire({
-          title: 'Bienvenido',
-          imageUrl: 'https://i.pinimg.com/originals/12/1d/43/121d43f850081bd9b279b7aff7cbb081.gif',
-          imageWidth: 400,
-          imageHeight: 344,
-          imageAlt: 'Custom image',
-          timer: 1500
+      if (this.rectificarPass()) {
+        this._usuarioService.postUsuario(registroData).subscribe(data => {
+          console.log(this._usuarioService.postUsuario)
+          Swal.fire({
+            title: '¡Bienvenido!',
+            imageUrl: 'https://i.pinimg.com/originals/12/1d/43/121d43f850081bd9b279b7aff7cbb081.gif',
+            imageWidth: 400,
+            imageHeight: 344,
+            imageAlt: 'Custom image',
+            timer: 1500
+          })
+          this.router.navigate(['/inicio-sesion']);
         })
-        this.router.navigate(['/inicio-sesion']);
-      })
+      }
     } else {
-      this._usuarioService.putUsuario(this.id, this.formularioRegistro.value).subscribe(res => {
-        Swal.fire({
-          icon: 'success',
-          title: 'Usuario Actualizado',
-          iconColor: '#2ce30b'
+      if (this.rectificarPass()) {
+        this._usuarioService.putUsuario(this.id, this.formularioRegistro.value).subscribe(res => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Usuario Actualizado',
+            iconColor: '#2ce30b'
+          })
+          this.router.navigate(['/admin/usuarios-registrados'])
         })
-        this.router.navigate(['/admin/usuarios-registrados'])
-      })
+      }
     }
   }
 
-  ngOnInit(): void {
-    this.accionSolicitada()
-  }
+    rectificarPass() {
+      let passUser = this.formularioRegistro.get('password')?.value;
+      if (passUser != this.inputPass2?.nativeElement.value) {
+        this.alertPass.nativeElement.classList.remove('d-none')
+        return false
+      } else {
+        this.alertPass.nativeElement.classList.add('d-none')
+        return true
+      }
+    }
 
-  accionSolicitada() {
-    if (this.id != null) {
-      this.tituloPagina = 'Actualizar Usuario'
-      this.txtBoton = 'Guardar Cambios'
-      this._usuarioService.getUsuario(this.id).subscribe(res => {
-        this.formularioRegistro.setValue({
-          nombre: res.nombre,
-          apellido: res.apellido,
-          correo: res.correo,
-          telefono: res.telefono,
-          password: '',
-          ciudad: res.ciudad,
-          postal: res.postal
-        })
-      }, error => {
-        this.router.navigate(['/404']);
-      });
+    ngOnInit(): void {
+      this.accionSolicitada()
+    }
+
+    accionSolicitada() {
+      if (this.id != null) {
+        this.tituloPagina = 'Actualizar Usuario'
+        this.txtBoton = 'Guardar Cambios'
+        this._usuarioService.getUsuario(this.id).subscribe(res => {
+          this.formularioRegistro.setValue({
+            nombre: res.nombre,
+            apellido: res.apellido,
+            correo: res.correo,
+            telefono: res.telefono,
+            password: '',
+            ciudad: res.ciudad,
+            postal: res.postal
+          })
+        }, error => {
+          this.router.navigate(['/404']);
+        });
+      }
     }
   }
-}
