@@ -63,7 +63,7 @@ export class RegistroComponent {
 
   enviarFormulario() {
     let registroData: Usuario = this.formularioRegistro.value;
-    console.log(this.id)
+    console.log(registroData)
 
     if (this.id == null) {
       if (this.rectificarPass()) {
