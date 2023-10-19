@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DetalleCoreComponent } from './components/detalle-core/detalle-core.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { GrillaDetallesComponent } from './components/grilla-detalles/grilla-detalles.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GrillaDetallesComponent } from './components/grilla-detalles/grilla-det
     NavbarComponent,
     DetalleCoreComponent,
     ContactoComponent,
-    GrillaDetallesComponent
+    GrillaDetallesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

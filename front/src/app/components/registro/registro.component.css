@@ -1,64 +1,59 @@
 .cajitaRegistro {
-  padding: 50px;
+    padding: 50px;
 }
 
-.eyeicon{
-  position: relative;
-  right: -85px;
-  top: -30px;
-  cursor: pointer;
+.eyeicon {
+    position: relative;
+    right: -100px;
+    top: -31px;
+    cursor: pointer;
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
-  /* CSS inputs */
+/* CSS inputs */
 
 .input {
-  display: block;
-  --input-focus: #2d8cf0;
-  --font-color: #323232;
-  --font-color-sub: #8e8b8bc2;
-  --bg-color: #fff;
-  --main-color: #323232;
-  width: 250px;
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid var(--main-color);
-  background-color: var(--bg-color);
-  box-shadow: 4px 4px var(--main-color);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--font-color);
-  padding: 5px 10px;
-  outline: none;
+    display: block;
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #8e8b8bc2;
+    --bg-color: #fff;
+    --main-color: #323232;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
 
 }
 
 .input::placeholder {
-  color: var(--font-color-sub);
-  opacity: 0.8;
+    color: var(--font-color-sub);
+    opacity: 0.8;
 }
 
 .input:focus {
-  border: 2px solid var(--input-focus);
+    border: 2px solid var(--input-focus);
 }
 
-.col-6 {
-    flex: 0 0 auto;
-    width: 50%;
-    height: 60px;
-  }
 
-  /* CSS boton envio */
+/* CSS boton envio */
 
-  button {
+button {
     background: #0076d8;
     font-family: inherit;
     padding: 0.3em 1em;
@@ -68,20 +63,19 @@
     border-radius: 0.4em;
     box-shadow: 0.1em 0.1em;
 
-  }
+}
 
-  button:hover {
+button:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em;
-  }
+}
 
-  button:active {
+button:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
-  }
+}
 
-  .btnEnviar {
+.btnEnviar {
     display: flex;
     justify-content: center;
-  }
-
+}
