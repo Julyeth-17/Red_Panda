@@ -14,11 +14,10 @@ const routes: Routes = [
   { path : 'inicio-sesion', component: LoginComponent},
   { path : 'carrito', component: CartComponent},
   { path : 'checkout', component: CheckoutComponent},
-  { path : '404', component: Pagina404Component},
-  { path : '**', redirectTo : '404', pathMatch : 'full'},
   {path: 'productos', component: DetalleCoreComponent},
   {path: 'producto/:id', component: DetalleCoreComponent},
-  {path:'',}
+  { path : '404', component: Pagina404Component},
+  { path : '**', redirectTo : '404', pathMatch : 'full'},
 ];
 
 @NgModule({
