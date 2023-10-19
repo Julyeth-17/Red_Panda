@@ -7,7 +7,7 @@ import { autorizacionGuard } from "./guards/autorizacion.guard";
 // import { CartComponent } from "./components/cart/cart.component";
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
-import { DetalleCoreComponent} from './components/detalle-core/detalle-core.component';
+import { DetalleCoreComponent } from './components/detalle-core/detalle-core.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 
 const routes: Routes = [
