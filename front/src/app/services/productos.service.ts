@@ -8,7 +8,7 @@ import { Productos } from '../models/productos';
 })
 export class ProductosService {
 
-    url = 'http://localhost:3000/api/v1'
+    url = 'http://localhost:3000/api'
 
     constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class ProductosService {
     postProducto(producto: Productos):Observable<any>{
         return this.http.post(`${this.url}/crear-producto`, producto)
     }
-    
+
     putProducto(idProducto:string | null, dataProducto:Productos):Observable<any>{
         return this.http.put(`${this.url}/actualizar-productos/${idProducto}`, dataProducto)
     }

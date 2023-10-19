@@ -51,11 +51,6 @@
   border: 2px solid var(--input-focus);
 }
 
-.col-6 {
-    flex: 0 0 auto;
-    width: 50%;
-    height: 60px;
-  }
 
   /* CSS boton envio */
 
