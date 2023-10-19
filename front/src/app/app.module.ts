@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
@@ -11,6 +12,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { Pagina404Component } from './components/pagina404/pagina404.component';
     LoginComponent,
     CartComponent,
     CheckoutComponent,
-    Pagina404Component
+    Pagina404Component,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
