@@ -11,6 +11,7 @@ import { DetalleCoreComponent } from './components/detalle-core/detalle-core.com
 import { ProductosComponent } from './components/admin/productos/productos.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
+import { GrillaDetallesComponent } from './components/grilla-detalles/grilla-detalles.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -19,11 +20,11 @@ const routes: Routes = [
     // { path : 'carrito', component: CartComponent},
     { path: 'checkout', component: CheckoutComponent },
     { path: 'productos', component: DetalleCoreComponent },
-    { path: 'producto/:id', component: DetalleCoreComponent },
     { path: 'admin-users', canMatch: [autorizacionGuard], component: UsuariosComponent},
     { path: 'actualizar-productos/:id', component: DetalleCoreComponent},
     { path: 'admin-products', canMatch: [autorizacionGuard], component: ProductosComponent},
     { path: 'actualizar-usuarios/:id', component: RegistroComponent},
+    { path: 'producto/:id', component: GrillaDetallesComponent },
     { path: '404', component: Pagina404Component },
     { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];

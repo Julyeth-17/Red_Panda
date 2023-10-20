@@ -13,12 +13,15 @@ footer {
     background-color: #FF5C3A;
     color: #F7E3CB;
     padding: 20px;
+    margin-top: 25%;
+
 }
 
 .footer-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 
 .footer-row {
