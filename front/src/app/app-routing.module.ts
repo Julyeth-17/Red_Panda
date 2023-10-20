@@ -12,6 +12,7 @@ import { ProductosComponent } from './components/admin/productos/productos.compo
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 import { GrillaDetallesComponent } from './components/grilla-detalles/grilla-detalles.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -25,6 +26,8 @@ const routes: Routes = [
     { path: 'actualizar-usuarios/:id', component: RegistroComponent},
     { path: 'producto/:id', component: GrillaDetallesComponent },
     { path: '404', component: Pagina404Component },
+    { path: 'producto/:id', component: DetalleCoreComponent },
+    { path: 'nosotros', component: NosotrosComponent },
     { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 

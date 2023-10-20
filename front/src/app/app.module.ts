@@ -16,6 +16,7 @@ import { GrillaDetallesComponent } from './components/grilla-detalles/grilla-det
 import { HomeComponent } from './components/home/home.component';
 import { ProductosComponent } from './components/admin/productos/productos.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,7 @@ import { UsuariosComponent } from './components/admin/usuarios/usuarios.componen
         HomeComponent,
         ProductosComponent,
         UsuariosComponent,
+        NosotrosComponent
     ],
     imports: [
         BrowserModule,

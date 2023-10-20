@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Productos } from 'src/app/models/productos';
 import { ProductosService } from 'src/app/services/productos.service';
 
+
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -11,6 +12,7 @@ export class HomeComponent implements OnInit {
 
     listaProductos: Productos[] = []
     arrCajasCategoria: any = []
+
 
     constructor(private _productosService: ProductosService) { }
 
@@ -45,9 +47,9 @@ export class HomeComponent implements OnInit {
                 this.arrCajasCategoria.push(this.listaProductos[5])
                 break;
             default:
-                this.arrCajasCategoria.push(this.listaProductos[0])
-                this.arrCajasCategoria.push(this.listaProductos[1])
-                this.arrCajasCategoria.push(this.listaProductos[2])
+                this.arrCajasCategoria.push(this.listaProductos[6])
+                this.arrCajasCategoria.push(this.listaProductos[7])
+                this.arrCajasCategoria.push(this.listaProductos[8])
                 break;
         }
     }
@@ -80,6 +82,11 @@ export class HomeComponent implements OnInit {
           console.log(sessionStorage.getItem("carrito"));
           // localStorage.setItem('')
         });
+                // this.arrCajasCategoria.push(this.listaProductos[6])
+                // this.arrCajasCategoria.push(this.listaProductos[7])
+                // this.arrCajasCategoria.push(this.listaProductos[8])
+                // break;
+        }
     }
 
-}
+

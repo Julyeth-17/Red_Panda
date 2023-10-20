@@ -1,0 +1,64 @@
+.nosotrosImage      {
+    width: 100%;
+
+    background-color: var(--pandared);
+    position: relative;
+}
+
+
+.homeDiv h1     {
+    position: absolute;
+    margin-top: -150px;
+    color: var(--pandacream);
+    font-family: 'karla_bold';
+    font-size: 5rem;
+    letter-spacing: -5px;
+}
+
+
+.nosotrosBg     {
+    background-color: var(--pandacream);
+}
+
+.tituloNosotros {
+    font-family: 'karla_bold';
+    font-size: 5rem;
+    color: var(--pandared);
+    padding-top: 40px;
+    letter-spacing: -5px;
+}
+
+.parrafoNosotros     {
+    font-family: 'karla_regular';
+    font-size: 1.1rem;
+    padding-top: 20px;
+    color: var(--pandabrown);
+}
+
+.imagenPeluches     {
+    width: 40%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    padding-left: 60px;
+}
+
+.tituloSecundarioh3     {
+    color: var(--pandablue);
+}
+
+.iconosNosotros     {
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+.iconosNosotros img     {
+    width: 70%;
+}
+
+.iconosNosotros p   {
+    font-family: 'karla_regular';
+    font-size: 1.1rem;
+    padding-top: 20px;
+    color: var(--pandabrown);
+    width: 80%;
+}
