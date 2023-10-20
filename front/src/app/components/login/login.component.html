@@ -6,10 +6,11 @@
                 <h4 class="mb-5 col-6 text-center" style="font-family: 'karla_regular';">Inicia Sesión</h4>
 
                 <div class="col-12">
-                    <input type="email" class="form-control input" id="" placeholder="CORREO" required>
+                    <input type="email" class="form-control input" [(ngModel)]="userFormLogin.correo"
+                    [ngModelOptions]="{standalone:true}" placeholder="CORREO" required>
                 </div>
                 <div class="col-12 mt-3">
-                    <input input [type]="changetype?'password':'text'" class="input" placeholder="CONTRASEÑA"
+                    <input [type]="changetype?'password':'text'" class="input" placeholder="CONTRASEÑA"
                         required="" autocomplete="off" [(ngModel)]="userFormLogin.password"
                         [ngModelOptions]="{standalone:true}">
                     <span class="eyeicon" (click)="verpass()"><i

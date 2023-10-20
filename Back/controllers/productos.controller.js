@@ -45,9 +45,7 @@ exports.obtenerProducto = async (req, res) => {
 
 exports.actualizandoProducto = async (req, res) => {
         try {
-            
-            unidades
-            const { nombre, imagen, descripcion, precio,disponible, unidades } = req.body
+            const { nombre, imagen, descripcion, precio, disponible, unidades } = req.body
             let dataProducto = await Usuario.findById(req.params.id)
             if (!dataProducto) {
                 res.status(404).json({ mensaje: 'El usuario no existe' })

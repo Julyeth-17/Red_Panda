@@ -2,6 +2,7 @@ require('dotenv').config({ path: 'config.env' })
 const jwt = require('jsonwebtoken')
 
 exports.verificarToken = (req, res, next) => {
+    console.log(req.headers);
     let token = req.headers.authorization
 
     if (!token) {

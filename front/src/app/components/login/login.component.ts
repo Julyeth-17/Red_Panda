@@ -4,43 +4,43 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
 
-  visible: boolean = true;
-  changetype: boolean = true;
+    visible: boolean = true;
+    changetype: boolean = true;
 
-  userFormLogin = {
-      correo: '',
-      password: ''
-  }
+    userFormLogin = {
+        correo: '',
+        password: ''
+    }
 
-  regexAlfanum = /[a-zA-Z0-9_.]+$/
+    regexAlfanum = /[a-zA-Z0-9_.]+$/
 
-  constructor(private _usuarioService: UsuarioService, private router: Router) {}
+    constructor(private _usuarioService: UsuarioService, private router: Router) { }
 
-  ingresoUsuario(){
+    ingresoUsuario() {
 
-      this._usuarioService.postIngresoUsuario(this.userFormLogin).subscribe(respuestaAPI => {
-          sessionStorage.setItem('token', respuestaAPI.token);
-          console.log(respuestaAPI);
+        this._usuarioService.postIngresoUsuario(this.userFormLogin).subscribe(respuestaAPI => {
+            sessionStorage.setItem('token', respuestaAPI.token);
+            console.log(respuestaAPI);
 
-          this.router.navigate(['/'])
-      }, erro => {
-          Swal.fire({
-              icon: 'error',
-              title: 'Usuario y/o contraseña inválidos',
-              iconColor: '#ff0d0d'
-          })
-      });
-  }
+            this.router.navigate(['/admin-users'])
+        }, erro => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Usuario y/o contraseña inválidos',
+                iconColor: '#ff0d0d'
+            })
+        });
+    }
 
-  verpass(){
-      this.visible = !this.visible
-      this.changetype = !this.changetype
-  }
+    verpass() {
+        this.visible = !this.visible
+        this.changetype = !this.changetype
+    }
 
 }

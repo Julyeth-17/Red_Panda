@@ -12,9 +12,9 @@ export class UsuarioService {
 
     constructor(private http: HttpClient) { }
 
-    postUsuarios():Observable<any>{
+    getUsuarios():Observable<any>{
         const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
-        return this.http.post(`${this.url}/obtener-usuarios`, {headers})
+        return this.http.get(`${this.url}/obtener-usuarios`, {headers})
     }
 
     getUsuario(idUsuario:string):Observable<any>{

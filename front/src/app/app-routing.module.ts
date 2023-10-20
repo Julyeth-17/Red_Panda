@@ -8,24 +8,30 @@ import { autorizacionGuard } from "./guards/autorizacion.guard";
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { DetalleCoreComponent } from './components/detalle-core/detalle-core.component';
+import { ProductosComponent } from './components/admin/productos/productos.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path : 'usuario', component: RegistroComponent},
-  { path : 'inicio-sesion', component: LoginComponent},
-  // { path : 'carrito', component: CartComponent},
-  { path : 'checkout', component: CheckoutComponent},
-  {path: 'productos', component: DetalleCoreComponent},
-  {path: 'producto/:id', component: DetalleCoreComponent},
-  { path : '404', component: Pagina404Component},
-  { path : '**', redirectTo : '404', pathMatch : 'full'},
+    { path: '', component: HomeComponent },
+    { path: 'usuario', component: RegistroComponent },
+    { path: 'inicio-sesion', component: LoginComponent },
+    // { path : 'carrito', component: CartComponent},
+    { path: 'checkout', component: CheckoutComponent },
+    { path: 'productos', component: DetalleCoreComponent },
+    { path: 'producto/:id', component: DetalleCoreComponent },
+    { path: 'admin-users', canMatch: [autorizacionGuard], component: UsuariosComponent},
+    { path: 'actualizar-productos/:id', component: DetalleCoreComponent},
+    { path: 'admin-products', canMatch: [autorizacionGuard], component: ProductosComponent},
+    { path: 'actualizar-usuarios/:id', component: RegistroComponent},
+    { path: '404', component: Pagina404Component },
+    { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 
 @NgModule({
 
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
 

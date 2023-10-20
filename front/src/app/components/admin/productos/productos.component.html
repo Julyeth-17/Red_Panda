@@ -1,0 +1,34 @@
+<section>
+    <div class="container cajitaP"
+        style="width: 100%; background-color: #f7e3cb; border-radius: 25px;">
+        <h2 class="text-center py-4" style="font-family: 'karla_bold';">Listado de Productos</h2>
+        <table class="table pt-1">
+            <thead>
+                <tr class="text-center g-3" style="font-family: 'karla_bold'; font-size: 18px;">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Disponibilidad</th>
+                    <th scope="col">Unidades</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="align-middle text-center g-3" style="font-family: 'karla_regular'; font-size: 15px;"
+                    *ngFor="let productoData of listaProductos">
+                    <td>{{productoData.nombre}}</td>
+                    <td>{{productoData.descripcion}}</td>
+                    <td>{{productoData.precio}}</td>
+                    <td>{{productoData.disponible}}</td>
+                    <td>{{productoData.unidades}}</td>
+                    <td>
+                        <button class="btn btn-dark mx-1"
+                            [routerLink]="['/actualizar-productos', productoData._id]">Editar</button>
+                        <button class="btn btn-danger mx-1" (click)="eliminarProducto(productoData._id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

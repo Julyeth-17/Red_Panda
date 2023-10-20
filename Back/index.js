@@ -1,17 +1,15 @@
 console.log('Prueba wiii')
 
 const express = require('express')
-const app = express()
+const conectarDB = require('./config/db.js')
 const cors = require('cors')
 
-
-const conectarDB = require('./config/db.js')
+const app = express()
 conectarDB()
 app.use(cors())
-
 app.use( express.json())
 
-app.use('/api', require('./routes/routes.js'))
+app.use('/api', require('./routes/routes'))
 
 
 app.listen(3000, () => {

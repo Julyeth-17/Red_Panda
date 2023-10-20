@@ -9,10 +9,10 @@
                 <div class="formularioKK row">
                     <div class="col-6">
                         <input type="text" class="input mb-4" formControlName="nombre" placeholder="NOMBRE">
-                        <div *ngIf="formularioRegistro.get('nombre')!.hasError('required') && formularioRegistro.get('nombre')!.touched"
-                            class="fw-bold text-danger">Nombre Requerido</div>
-                        <div *ngIf="formularioRegistro.get('nombre')!.hasError('pattern') && formularioRegistro.get('nombre')!.touched"
-                            class="fw-bold text-danger">Nombre Invalido</div>
+                        <div data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom" *ngIf="formularioRegistro.get('nombre')!.hasError('required') && formularioRegistro.get('nombre')!.touched"
+                            class="fw-bold text-danger" ></div>
+                        <div data-bs-toggle="tooltip" data-bs-title="Nombre Invalido" data-bs-placement="left" *ngIf="formularioRegistro.get('nombre')!.hasError('pattern') && formularioRegistro.get('nombre')!.touched"
+                            class="fw-bold text-danger"></div>
                     </div>
 
                     <div class="col-6">
@@ -24,10 +24,10 @@
                     </div>
 
                     <div class="col-6">
-                        <input type="email" class="input mb-4" formControlName="correo" placeholder="CORREO">
-                        <div *ngIf="formularioRegistro.get('correo')!.hasError('required') && formularioRegistro.get('correo')!.touched"
+                        <input type="email" class="input mb-4" formControlName="email" placeholder="CORREO">
+                        <div *ngIf="formularioRegistro.get('email')!.hasError('required') && formularioRegistro.get('email')!.touched"
                             class="fw-bold text-danger">Correo Requerido</div>
-                        <div *ngIf="formularioRegistro.get('correo')!.hasError('pattern') && formularioRegistro.get('correo')!.touched"
+                        <div *ngIf="formularioRegistro.get('email')!.hasError('pattern') && formularioRegistro.get('email')!.touched"
                             class="fw-bold text-danger">Correo Invalido</div>
                     </div>
 
