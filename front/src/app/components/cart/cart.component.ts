@@ -7,44 +7,41 @@ import { Productos } from "../../models/productos";
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
-  constructor(private _productos: ProductosService) {}
+export class CartComponent {}
+//   constructor(private _productos: ProductosService) {}
 
-  carritoProductos:Productos[] = []
-  items = this._productos.getProductos();
- 
+//   carritoProductos:Productos[] = []
+//   items = this._productos.getProducto();
 
-  getProducto(): void {
-    console.log("aqui vamos");
-    console.log(this.items);
-    /*
-    this._productos.getProducto().subscribe((data: any) => {
-      this.carritoProductos = data.data;
-      // this.cartDetails = data.data;
-      console.log(this.carritoProductos);
-    });
-    */
-  }
+//   getProducto(): void {
 
-  /*
 
-  _increamentQTY(): void {
-    const payload = {};
-    this._productos.increaseQty(payload).subscribe(() => {
-      this.getProducto();
-      alert('Product Added');
-    });
-  }
-  deleteProducto(): void {
-    this._productos.deleteProducto().subscribe(() => {
-      this.getProducto();
-      alert('Cart Emptied');
-    });
-  }
-  */
-  ngOnInit(): void {
-    this.getProducto();
-    console.log("hola");
-  }
+//     this._productos.getProducto().subscribe((data: any) => {
+//       this.carritoProductos = data.data;
+//       // this.cartDetails = data.data;
+//       console.log(this.carritoProductos);
+//     });
 
-}
+//   }
+
+
+//   _increamentQTY(): void {
+//     const payload = {};
+//     this._productos.increaseQty(payload).subscribe(() => {
+//       this.getProducto();
+//       alert('Product Added');
+//     });
+//   }
+//   deleteProducto(): void {
+//     this._productos.deleteProducto().subscribe(() => {
+//       this.getProducto();
+//       alert('Cart Emptied');
+//     });
+//   }
+//   */
+//   ngOnInit(): void {
+//     this.getProducto();
+//     console.log("hola");
+//   }
+
+

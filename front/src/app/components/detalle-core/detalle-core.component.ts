@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder, FormGroup, Validators} from '@angular/forms'
 import { DetalleCoreService } from 'src/app/services/detalle-core.service';
-import { Productos } from 'models/detalle-core';
+import { Productos } from 'models/detalle.core';
 
 
 @Component({

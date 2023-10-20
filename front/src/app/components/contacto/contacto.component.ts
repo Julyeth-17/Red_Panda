@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import { NgForm } from '@angular/forms';
+
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-contacto',
@@ -25,4 +29,16 @@ export class ContactoComponent implements OnInit {
   agregarContacto(){
   console.log(this.contactoForm)
   }
+
+
+mostrarSweetAlert() {
+  Swal.fire({
+    title: '¡Muchas gracias!',
+    text: 'Responderemos a tus inquietudes lo más pronto posible',
+    icon: 'success',
+    confirmButtonText: 'OK'
+  });
+}
+
+
 }

@@ -5,8 +5,6 @@
     <h2>{{ productDetails?.nombre }}</h2>
     <p>{{ productDetails?.descripcion }}</p>
     <p>Precio: ${{ productDetails?.precio | number: '1.2-2' }}</p>
-    <p>{{ productDetails?.unidades | number: '1.2-2' }}</p>
-    <p>{{ productDetails?.disponible }}</p>
 
     <button (click)="addToCart(productDetails)">Agregar al Carrito</button>
 </div>

@@ -29,7 +29,7 @@ export class GrillaDetallesComponent implements OnInit {
       nombre: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       precio: ['', [Validators.required]],
-      disponible: ['', [Validators.required]],
+disponible: ['', [Validators.required]],
       unidades: ['', [Validators.required]],
     });
   }
@@ -50,7 +50,7 @@ export class GrillaDetallesComponent implements OnInit {
     );
   }
 
-  addToCart(product: Detalles | null) {
+addToCart(product: Detalles | null) {
     // Agrega la lógica para agregar el producto al carrito aquí.
     // Esto podría implicar almacenar el producto en una variable o enviar los datos al servidor.
     alert(`${product?._id} se agregado al carrito.`);
