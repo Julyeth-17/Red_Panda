@@ -15,7 +15,7 @@ const routes: Routes = [
   { path : 'usuario', component: RegistroComponent},
   { path : 'inicio-sesion', component: LoginComponent},
   // { path : 'carrito', component: CartComponent},
-  { path : 'checkout', component: CheckoutComponent},
+  { path : 'carrito', component: CheckoutComponent},
   { path : '404', component: Pagina404Component},
   { path : '**', redirectTo : '404', pathMatch : 'full'},
   {path: 'productos', component: DetalleCoreComponent},
