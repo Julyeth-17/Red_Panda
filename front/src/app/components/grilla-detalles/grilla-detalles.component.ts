@@ -1,65 +1,68 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DetalleCoreService } from 'src/app/services/detalle-core.service';
+import { ProductosService } from 'src/app/services/productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Detalles } from 'models/grilla-detalles';
+import { Productos } from 'src/app/models/productos';
 import { Routes } from '@angular/router'
 
 
 
+
 @Component({
-  selector: 'app-grilla-detalles',
-  templateUrl: './grilla-detalles.component.html',
-  styleUrls: ['./grilla-detalles.component.css'],
+    selector: 'app-grilla-detalles',
+    templateUrl: './grilla-detalles.component.html',
+    styleUrls: ['./grilla-detalles.component.css'],
 })
 export class GrillaDetallesComponent implements OnInit {
-  GrillaDetalles: FormGroup;
-  productDetails: Detalles | null = null;
-  listaDetalles: Detalles[] = []
+    GrillaDetalles: FormGroup;
+    productDetails: Productos | null = null;
+    listaProductos: Productos[] = []
 
-  constructor(
-    private fb: FormBuilder,
-    private _detallesService: DetalleCoreService,
-    private router: Router,
-    private idUsuarioRuta: ActivatedRoute
-  ) {
-    this.GrillaDetalles = this.fb.group({
-      _id: ['', [Validators.required]],
-      imagen: ['', [Validators.required]],
-      nombre: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]],
-      precio: ['', [Validators.required]],
-disponible: ['', [Validators.required]],
-      unidades: ['', [Validators.required]],
-    });
-  }
+    constructor(
+        private fb: FormBuilder,
+        private _productosService: ProductosService,
+        private router: Router,
+        private idUsuarioRuta: ActivatedRoute
+    ) {
+        this.GrillaDetalles = this.fb.group({
+            _id: ['', [Validators.required]],
+            imagen: ['', [Validators.required]],
+            nombre: ['', [Validators.required]],
+            descripcion: ['', [Validators.required]],
+            precio: ['', [Validators.required]],
+        });
+    }
 
-  ngOnInit(): void {
-    this.obtenerDetalles();
-  }
+    ngOnInit(): void {
+        this.obtenerProductos();
+    }
 
-  obtenerDetalles() {
-    const productId = this.idUsuarioRuta.snapshot.params['productId'];// Obtener el productId desde la URL
-    this._detallesService.getDetalle(productId).subscribe(
-      (respuestaApi) => {
-        this.productDetails = respuestaApi;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+    obtenerProductos() {
 
-addToCart(product: Detalles | null) {
-    // Agrega la lógica para agregar el producto al carrito aquí.
-    // Esto podría implicar almacenar el producto en una variable o enviar los datos al servidor.
-    alert(`${product?._id} se agregado al carrito.`);
-  }
-}
+        this.productDetails = {
+
+        };
+
+        const productId = this.productDetails.snapshot.params['productId']; // Obtener el productId desde la URL
+
+        if (productId) {
+            this._productosService.getProductos(productId).subscribe(
+                (respuestaApi) => {
+                    this.productDetails = respuestaApi;
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
+        } else {
+            console.log("productId no encontrado en la URL");
+        }
+    }
+
 
 const routes: Routes = [
-  // Otras rutas aquí...
-  { path: 'producto/:productId', component: GrillaDetallesComponent },
+
+    { path: 'producto/:productId', component: GrillaDetallesComponent },
 ];
 
-
+}
