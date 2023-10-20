@@ -24,25 +24,24 @@
         <div class="footer-row">
 
             <ul>
-                <div class="cardp">
-                    <span class="title">Contáctanos</span>
-                    <form class="form">
-                        <div class="group">
-                            <input placeholder="‎" type="text" required="">
-                            <label for="name">Nombre</label>
-                        </div>
-                        <div class="group">
-                            <input placeholder="‎" type="email" id="email" name="email" required="">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="group">
-                            <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
-                            <label for="comment">Cómo podemos ayudarte</label>
-                        </div>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-
+              <div class="cardp">
+                <span class="title">Contáctanos</span>
+                <form class="form">
+                  <div class="group">
+                  <input placeholder="‎" type="text" required="">
+                  <label for="name">Nombre</label>
+                  </div>
+              <div class="group">
+                  <input placeholder="‎" type="email" id="email" name="email" required="">
+                  <label for="email">Email</label>
+                  </div>
+              <div class="group">
+                  <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
+                  <label for="comment">Cómo podemos ayudarte</label>
+              </div>
+              <button (click)="mostrarSweetAlert()">Enviar</button>
+                </form>
+              </div>
             </ul>
         </div>
     </div>
