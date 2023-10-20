@@ -1,9 +1,20 @@
+.bg-general-redPanda {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    padding: 100px 0;
+}
 
 .cajitaLogin {
     display: flex;
     justify-content: start;
     padding: 60px;
     padding-left: 80px;
+    width: 36%;
+    background-color: #f7e3cb;
+    opacity: 90%;
+    border-radius: 25px;
 }
 
 .eyeicon {

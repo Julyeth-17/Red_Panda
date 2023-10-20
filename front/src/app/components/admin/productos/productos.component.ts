@@ -12,7 +12,7 @@ export class ProductosComponent {
 
     listaProductos: Productos[] = [];
 
-    constructor(private _productoService: ProductosService){
+    constructor(private _productoService: ProductosService) {
 
     }
 
@@ -52,5 +52,13 @@ export class ProductosComponent {
         })
     }
 
+    alerta() {
+        Swal.fire({
+            title:'¡En construcción!',
+            imageUrl: 'https://media2.giphy.com/media/mMjzDtzFdnXaJhGyyx/giphy.gif?cid=ecf05e476i4r7tgzco4e51kp3sulwteqdf50d1dakx7ddml1&ep=v1_gifs_search&rid=giphy.gif&ct=g',
+            imageWidth: 300,
+            imageHeight: 300
+        })
+    }
 
 }

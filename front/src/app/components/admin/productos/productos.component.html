@@ -23,9 +23,9 @@
                     <td>{{productoData.disponible}}</td>
                     <td>{{productoData.unidades}}</td>
                     <td>
-                        <button class="btn btn-dark mx-1"
-                            [routerLink]="['/actualizar-productos', productoData._id]">Editar</button>
-                        <button class="btn btn-danger mx-1" (click)="eliminarProducto(productoData._id)">Eliminar</button>
+                        <button class="btn btn-dark mx-1 btnEditar"
+                            (click)="alerta()">Editar</button>
+                        <button class="btn btn-danger mt-2 mx-1" (click)="eliminarProducto(productoData._id)">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
