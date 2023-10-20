@@ -11,25 +11,21 @@ import { DetalleCoreComponent } from './components/detalle-core/detalle-core.com
 import { ContactoComponent } from './components/contacto/contacto.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path : 'usuario', component: RegistroComponent},
-  { path : 'inicio-sesion', component: LoginComponent},
-  // { path : 'carrito', component: CartComponent},
-  { path : 'checkout', component: CheckoutComponent},
-  { path : '404', component: Pagina404Component},
-  { path : '**', redirectTo : '404', pathMatch : 'full'},
-  {path: 'productos', component: DetalleCoreComponent},
-  {path: 'producto/:id', component: DetalleCoreComponent},
-<<<<<<< HEAD
-
-=======
->>>>>>> master
+    { path: '', component: HomeComponent },
+    { path: 'usuario', component: RegistroComponent },
+    { path: 'inicio-sesion', component: LoginComponent },
+    // { path : 'carrito', component: CartComponent},
+    { path: 'checkout', component: CheckoutComponent },
+    { path: '404', component: Pagina404Component },
+    { path: '**', redirectTo: '404', pathMatch: 'full' },
+    { path: 'productos', component: DetalleCoreComponent },
+    { path: 'producto/:id', component: DetalleCoreComponent }
 ];
 
 @NgModule({
 
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
 

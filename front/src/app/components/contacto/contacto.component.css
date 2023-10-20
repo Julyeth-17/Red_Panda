@@ -10,30 +10,18 @@ body {
 }
 
 footer {
-<<<<<<< HEAD
-  background-color: #FF5C3A;
-  color: #F7E3CB;
-  padding: 20px;
-  margin-top: 25%;
-
-=======
     background-color: #FF5C3A;
     color: #F7E3CB;
     padding: 20px;
->>>>>>> master
+    margin-top: 25%;
+
 }
 
 .footer-content {
-<<<<<<< HEAD
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-=======
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
->>>>>>> master
+
 }
 
 .footer-row {
