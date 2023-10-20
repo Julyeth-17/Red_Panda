@@ -13,25 +13,13 @@ import { Routes } from '@angular/router'
     templateUrl: './grilla-detalles.component.html',
     styleUrls: ['./grilla-detalles.component.css'],
 })
-export class GrillaDetallesComponent implements OnInit {
-    GrillaDetalles: FormGroup;
-    productDetails: Productos | null = null;
-    listaProductos: Productos[] = []
-
-    constructor(
-        private fb: FormBuilder,
-        private _productosService: ProductosService,
-        private router: Router,
-        private idUsuarioRuta: ActivatedRoute
-    ) {
-        this.GrillaDetalles = this.fb.group({
-            _id: ['', [Validators.required]],
-            imagen: ['', [Validators.required]],
-            nombre: ['', [Validators.required]],
-            descripcion: ['', [Validators.required]],
-            precio: ['', [Validators.required]],
-        });
+export class GrillaDetallesComponent {
+    idProducto: string | null
+    dataProducto:any = ""
+    constructor(private _productosService: ProductosService,  private router: Router,  private idUsuarioRuta: ActivatedRoute ) {
+        this.idProducto = this.idUsuarioRuta.snapshot.paramMap.get('id')
     }
+
 
     ngOnInit(): void {
         this.obtenerProductos();
@@ -39,16 +27,10 @@ export class GrillaDetallesComponent implements OnInit {
 
     obtenerProductos() {
 
-        this.productDetails = {
-
-        };
-
-        const productId = this.productDetails.snapshot.params['productId']; // Obtener el productId desde la URL
-
-        if (productId) {
-            this._productosService.getProductos(productId).subscribe(
+        if (this.idProducto != null) {
+            this._productosService.getProducto(this.idProducto).subscribe(
                 (respuestaApi) => {
-                    this.productDetails = respuestaApi;
+                    this.dataProducto = respuestaApi
                 },
                 (error) => {
                     console.log(error);
@@ -60,9 +42,5 @@ export class GrillaDetallesComponent implements OnInit {
     }
 
 
-const routes: Routes = [
-
-    { path: 'producto/:productId', component: GrillaDetallesComponent },
-];
 
 }

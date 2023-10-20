@@ -54,15 +54,17 @@
                 <div class="d-flex  imgProductos">
                     <div class="col-4 d-flex flex-column justify-content-center"
                         *ngFor="let productoInicio of arrCajasCategoria">
-                        <img src="{{productoInicio.imagen}}" onclick="showProductDetails" alt="">
-                        <div class="nombreProducto">{{productoInicio.nombre}}</div>
-                        <div class="precioProducto">${{productoInicio.precio}}</div>
-                        <button type="submit" class="botonesProductos2">
-                            Añadir al carrito
-                            <svg class="bi" aria-hidden="true">
-                                <use xlink:href="#arrow-right"></use>
-                            </svg>
-                        </button>
+                        <div [routerLink]="['/producto', productoInicio._id]" >
+                            <img src="{{productoInicio.imagen}}" alt="">
+                            <div class="nombreProducto">{{productoInicio.nombre}}</div>
+                            <div class="precioProducto">${{productoInicio.precio}}</div>
+                            <button type="submit" class="botonesProductos2">
+                                Añadir al carrito
+                                <svg class="bi" aria-hidden="true">
+                                    <use xlink:href="#arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
