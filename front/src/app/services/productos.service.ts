@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { Productos } from '../models/productos';
@@ -14,7 +14,9 @@ export class ProductosService {
 
 
     getProductos(): Observable<any> {
-        return this.http.get(`${this.url}/obtener-productos`)
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
+
+        return this.http.get(`${this.url}/obtener-productos`, {headers})
     }
 
     getProducto(idProducto:string):Observable<any>{

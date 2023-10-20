@@ -1,0 +1,36 @@
+<section>
+    <div class="container cajitaS"
+        style="width: 100%; background-color: #f7e3cb; border-radius: 25px;">
+        <h2 class="text-center py-4" style="font-family: 'karla_bold';">Usuarios</h2>
+        <table class="table pt-1">
+            <thead>
+                <tr class="text-center g-3" style="font-family: 'karla_bold'; font-size: 18px;">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Postal</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="align-middle text-center g-3" style="font-family: 'karla_regular'; font-size: 15px;"
+                    *ngFor="let productoData of listaUsuarios">
+                    <td>{{productoData.nombre}}</td>
+                    <td>{{productoData.apellido}}</td>
+                    <td>{{productoData.email}}</td>
+                    <td>{{productoData.telefono}}</td>
+                    <td>{{productoData.ciudad}}</td>
+                    <td>{{productoData.postal}}</td>
+                    <td>
+                        <button class="btn btn-dark mx-1"
+                            [routerLink]="['/actualizar-usuarios', productoData._id]">Editar</button>
+                        <button class="btn btn-danger mx-1" (click)="eliminarUsuario(productoData._id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

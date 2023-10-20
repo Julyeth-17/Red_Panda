@@ -1,53 +1,45 @@
 const mongoose = require('mongoose')
 
 const usuarioSchema = mongoose.Schema({
-
-
     nombre: {
         type: String,
-        require: true
+        required: true
     },
     apellido: {
         type: String,
-        require: true
+        required: true
     },
     email: {
         type: String,
-        require: true
+        required: true
     },
     password: {
         type: String,
-        require: true
+        required: true
     },
     ciudad: {
         type: String,
-        require: true
+        required: true
     },
     telefono: {
         type: Number,
-        require: true
+        required: true
     },
     postal: {
         type: Number,
-        require: false
+        required: false
     },
     newsletter: {
         type: Boolean,
-        require: true
+        required: true
     },
     condiciones: {
         type: Boolean,
-        require: true
+        required: true
     },
     fec_cre: {
         type: Date,
         default: Date.now(),
     },
-
-
-
-
-
-
 })
 module.exports = mongoose.model('usuario', usuarioSchema)

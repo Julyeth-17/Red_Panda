@@ -14,29 +14,33 @@ import { DetalleCoreComponent } from './components/detalle-core/detalle-core.com
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { GrillaDetallesComponent } from './components/grilla-detalles/grilla-detalles.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductosComponent } from './components/admin/productos/productos.component';
+import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RegistroComponent,
-    LoginComponent,
-    CheckoutComponent,
-    Pagina404Component,
-    NavbarComponent,
-    DetalleCoreComponent,
-    ContactoComponent,
-    GrillaDetallesComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        RegistroComponent,
+        LoginComponent,
+        CheckoutComponent,
+        Pagina404Component,
+        NavbarComponent,
+        DetalleCoreComponent,
+        ContactoComponent,
+        GrillaDetallesComponent,
+        HomeComponent,
+        ProductosComponent,
+        UsuariosComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

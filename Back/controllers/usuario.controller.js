@@ -79,17 +79,17 @@ exports.borrandoUsuario = async (req, res) => {
         if (regexIdMongo.test(req.params.id)) {
             const usuarioData = await Usuario.findById(req.params.id)
             if (!usuarioData) {
-                return res.status(404).send("Esto no existe manito")
+                return res.status(404).json({msg: "Esto no existe manito"})
             } else {
                 await Usuario.findOneAndRemove({ _id: req.params.id })
-                return res.send("Borrando todo todito")
+                return res.json({msg:"Borrando todo todito"})
             }
         } else {
-            return res.status(400).send("ID no válido")
+            return res.status(400).json({msg: "ID no válido"})
         }
     } catch (error) {
         console.log(error);
-        return res.status(502).send('jejé no sé qué pasó')
+        return res.status(502).json({msg:'jejé no sé qué pasó'})
     }
 };
 

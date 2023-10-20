@@ -99,9 +99,45 @@
                     }
                 }
             }
+        },
+        "defaultConfiguration": "production"
+    },
+    "serve": {
+        "builder": "@angular-devkit/build-angular:dev-server",
+        "configurations": {
+            "production": {
+                "browserTarget": "redPanda:build:production"
+            },
+            "development": {
+                "browserTarget": "redPanda:build:development"
+            }
+        },
+        "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+        "builder": "@angular-devkit/build-angular:extract-i18n",
+        "options": {
+            "browserTarget": "redPanda:build"
         }
     },
-    "cli": {
-        "analytics": "f2444660-649d-4815-87d5-fb9644a4eb49"
-    }
-}
+    "test": {
+        "builder": "@angular-devkit/build-angular:karma",
+        "options": {
+            "polyfills": [
+                "zone.js",
+                "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+                "src/favicon.ico",
+                "src/assets"
+            ],
+            "styles": [
+                "src/styles.css"
+            ],
+            "scripts": []
+        }
+    },
+"cli": {
+    "analytics": "f2444660-649d-4815-87d5-fb9644a4eb49"
+},
