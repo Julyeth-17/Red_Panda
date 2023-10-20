@@ -17,7 +17,7 @@
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
-                            <tr *ngFor="let item of productosCarrito">
+                            <tr *ngFor="let item of productosCarrito; let i = index">
                                 <th scope="row">{{item.nombre}}</th>
                                 <td>
                                     <div class="text-center">
@@ -26,9 +26,9 @@
                                 </td>
                                 <td>
                                     <div class="d-flex text-center justify-content-center">
-                                    <div><button>-</button></div>
-                                    <div class="px-2">{{contador}}</div>
-                                    <div><button>+</button></div>
+                                    <div><button class="{{item._id}}" (click)="quitarProducto(i)">-</button></div>
+                                    <div class="px-2">{{item.contador}}</div>
+                                    <div><button (click)="agregarProducto(i)">+</button></div>
 
                                 </div>
                                 </td>

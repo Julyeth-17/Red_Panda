@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ProductosService } from "../../services/productos.service";
 import { Productos } from "../../models/productos";
 
@@ -16,80 +16,58 @@ export class CheckoutComponent implements OnInit {
     precioTotal: number = 0
     contador: any = []
 
-    constructor(private _productosService: ProductosService) { }
-
+    constructor(private _productosService: ProductosService, private el: ElementRef) { }
     ngOnInit(): void {
 
+        this.carritoRecorrido()
 
+    }
+
+    carritoRecorrido() {
         if (sessionStorage.getItem("carrito") != null) {
+            this.precioTotal = 0
             this.hayProductos = true
             this.productosCarrito = JSON.parse(sessionStorage.getItem("carrito")!)
             console.log(this.productosCarrito)
             this.productosCarrito.forEach((productoC: any) => {
-                this.precioTotal = this.precioTotal + productoC.precio;
+                this.precioTotal = this.precioTotal + (productoC.precio * productoC.contador);
+                console.log(this.precioTotal);
+
                 this.contador = productoC.contador
             });
         } else {
             this.hayProductos = false
         }
+    }
 
+    quitarProducto(posicionArray: any) {
+        console.log(posicionArray)
+        if (this.productosCarrito[posicionArray].contador == 1) {
+            this.productosCarrito.splice(posicionArray, 1)
+        } else {
+            this.productosCarrito[posicionArray].contador = this.productosCarrito[posicionArray].contador - 1
+        }
+        sessionStorage.setItem("carrito", JSON.stringify(this.productosCarrito))
+
+        if (sessionStorage.getItem("carrito") == null || sessionStorage.getItem("carrito") == "[]") {
+            sessionStorage.removeItem("carrito")
+        }
+        this.carritoRecorrido()
 
     }
 
 
-    agregarALCarrito(idProducto: string) {
-        this._productosService.getProducto(idProducto).subscribe((data: any) => {
-            let productosCarrito: any = []
 
-            if (sessionStorage.getItem("carrito") == null) {
-                data.contador = 1
-                productosCarrito.push(data)
-                sessionStorage.setItem("carrito", JSON.stringify(productosCarrito))
-            } else {
+    agregarProducto(posicionArray: any) {
+        console.log(posicionArray)
+        this.productosCarrito[posicionArray].contador = this.productosCarrito[posicionArray].contador + 1
+        console.log(this.productosCarrito);
+        sessionStorage.setItem("carrito", JSON.stringify(this.productosCarrito))
+        this.carritoRecorrido()
 
-                productosCarrito = JSON.parse(sessionStorage.getItem("carrito")!)
-
-                let rectificaProducto = productosCarrito.findIndex((elemento: any) => elemento._id == idProducto)
-                if (rectificaProducto == -1) {
-                    data.contador = 1
-                    productosCarrito.push(data)
-                } else {
-                    data.contador = productosCarrito[rectificaProducto].contador + 1
-                    productosCarrito[rectificaProducto] = data
-                }
-                sessionStorage.setItem("carrito", JSON.stringify(productosCarrito))
-
-
-            }
-
-            console.log(sessionStorage.getItem("carrito"));
-            // localStorage.setItem('')
-        });
     }
+
+
 
 
 }
-
-
-
-//
-
-//     constructor(private _productos: ProductosService) {}
-
-//     ngOnInit(): void {
-//         this.getProducto(identificador:string)
-//     }
-
-//     // getProducto(){
-//     // this._productos.getProducto().subscribe((data:any)=> {
-//     //   this.item=data
-//     // })
-// getProducto(identificador:string){
-//   this._productos.getProducto(identificador).subscribe(
-//     data =>{
-//     this.item= data.data
-//     console.log(this.item)
-//   })
-// }
-
-//     }
