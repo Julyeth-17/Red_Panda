@@ -49,28 +49,9 @@
     <section class="bgProductos">
         <div class="container">
             <h1 class="tituloProductos d-flex justify-content-center">Escoge una Caja</h1>
-            <div class="row">
-                <div class="btnProductos d-flex justify-content-around">
-                    <button type="button" (click)="cajasPorCategoria(1)" class="col-4">CAJAS 1</button>
-                    <button type="button" (click)="cajasPorCategoria(2)" class="col-4">CAJAS 2</button>
-                    <button type="button" (click)="cajasPorCategoria(3)" class="col-4">CAJAS 3</button>
-                </div>
-                <div class="d-flex  imgProductos">
-                    <div class="col-4 d-flex flex-column justify-content-center"
-                        *ngFor="let productoInicio of arrCajasCategoria">
-                        <img src="{{productoInicio.imagen}}" alt="">
-                        <div class="nombreProducto">{{productoInicio.nombre}}</div>
-                        <div class="precioProducto">${{productoInicio.precio}}</div>
-                        <button type="button" (click)="agregarALCarrito(productoInicio._id)" class="botonesProductos2">
-                            Añadir al carrito
-                            <svg class="bi" aria-hidden="true">
-                                <use xlink:href="#arrow-right"></use>
-                            </svg>
-                        </button>
-                        <!-- peye -->
-                    </div>
-                </div>
-            </div>
+          <div>
+            PRUEBA
+          </div>
         </div>
 
     </section>
