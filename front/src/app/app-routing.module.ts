@@ -9,23 +9,25 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { DetalleCoreComponent } from './components/detalle-core/detalle-core.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path : 'usuario', component: RegistroComponent},
-  { path : 'inicio-sesion', component: LoginComponent},
-  // { path : 'carrito', component: CartComponent},
-  { path : 'checkout', component: CheckoutComponent},
-  { path : '404', component: Pagina404Component},
-  { path : '**', redirectTo : '404', pathMatch : 'full'},
-  {path: 'productos', component: DetalleCoreComponent},
-  {path: 'producto/:id', component: DetalleCoreComponent},
+    { path: '', component: HomeComponent },
+    { path: 'usuario', component: RegistroComponent },
+    { path: 'inicio-sesion', component: LoginComponent },
+    // { path : 'carrito', component: CartComponent},
+    { path: 'checkout', component: CheckoutComponent },
+    { path: '404', component: Pagina404Component },
+    { path: 'productos', component: DetalleCoreComponent },
+    { path: 'producto/:id', component: DetalleCoreComponent },
+    { path: 'nosotros', component: NosotrosComponent },
+    { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 
 @NgModule({
 
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
 
