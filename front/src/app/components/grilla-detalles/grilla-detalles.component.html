@@ -1,10 +1,17 @@
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<section style="margin-left: 20%; margin-right: 20%;">
+<div class="row row-cols-1 row-cols-md-2 g-4" style="width: 240%;">
     <div class="col">
         <div class="product-details">
-            <h1>{{dataProducto.nombre}}</h1>
-            <img src="{{dataProducto.imagen}}" class="w-50" alt="">
-
-            <button [routerLink]="['/']">Volver a la lista de productos</button>
+            <div class="image-container">
+                <img src="{{dataProducto.imagen}}" class="w-100" alt="">
+            </div>
+            <div class="text-details" style="padding-top: 20%;">
+                <h2>{{dataProducto.nombre}}</h2>
+                <p>"{{dataProducto.descripcion}}"</p>
+                <button type="submit" [routerLink]="['/']">Volver al inicio</button>
+            </div>
         </div>
     </div>
 </div>
+</section>
+
