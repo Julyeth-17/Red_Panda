@@ -48,15 +48,37 @@
                             </div>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">SubTotal {{precioTotal | currency:"$"}}</li>
-                            <li class="list-group-item">Descuentos</li>
-                            <li class="list-group-item">Gastos de Envío</li>
+                            <li class="list-group-item">
+                               <div class="d-flex justify-content-between">
+                                <div> SubTotal </div>
+                               <div> {{precioTotal | currency:"$"}}</div>
+                               </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                <div> Descuentos </div>
+                               <div> {{0 | currency:"$"}}</div>
+                            </div>
+                            </li>
+                            <li class="list-group-item">
+
+                                <div class="d-flex justify-content-between">
+                                    <div> Gastos de Envío </div>
+                                   <div> {{0 | currency:"$"}}</div>
+                                </div>
+                            </li>
                         </ul>
                         <div class="card-body">
-                            <li class="list-group-item">Total</li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div> Total   </div>
+                                   <div> {{precioTotal | currency:"$"}}</div>
+                                </div>
+
+                            </li>
                         </div>
                         <div class="card-body">
-                            <button class="card-img-bottom">Finalizar Compra</button>
+                            <button class="card-img-bottom" (click)="finalizarC()">Finalizar Compra</button>
                         </div>
                     </div>
                 </div>

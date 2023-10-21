@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { ProductosService } from "../../services/productos.service";
 import { Productos } from "../../models/productos";
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-checkout',
@@ -67,7 +68,14 @@ export class CheckoutComponent implements OnInit {
 
     }
 
-
-
-
+    finalizarC() {
+        Swal.fire({
+            title: 'Gracias por tu compra!',
+            text: 'Vuelve pronto',
+            imageUrl: 'https://cdn.memegenerator.es/descargar/14248351',
+            imageWidth: 400,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+        })
+    }
 }
