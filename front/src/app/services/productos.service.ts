@@ -35,4 +35,7 @@ export class ProductosService {
         return this.http.delete(`${this.url}/eliminar-productos/${idProducto}`)
     }
 
+    addToCard(idProducto:string){
+      // return this.http.post( `${this.url}/crear-producto/${idProducto}`)
+    }
 }

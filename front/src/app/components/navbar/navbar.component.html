@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg  ">
-    <div class="container-fluid" style="background-color: var(--pandacream #F7e3cb); font-family: 'karla_regular';">
-        <a class="navbar-brand" href="http://localhost:4200/">
+    <div class="container" style="background-color: var(--pandacream #F7e3cb); font-family: 'karla_regular';">
+        <a class="navbar-brand" href="http://localhost:4200/home">
             <img src="../assets/logo1.png" alt="Red Panda" style="width: 150px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -14,7 +14,7 @@
 
                     <ng-container *ngIf="!_usuarioService.estaLogueado(); else seccionPerfil">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="# "
+                            <a class="nav-link active" aria-current="page" href="http://localhost:4200/nosotros"
                                 style="color: #612a20;">Nosotros</a>
                         </li>
                         <li class="nav-item">
@@ -36,7 +36,7 @@
                                 style="color: #612a20;">Admin Usuarios</a>
                         </li>
                         <li class="nav-link">
-                            <i (click)="cerrarSesion()" style="color: #612a20;" class="fa-solid fa-right-from-bracket"></i>
+                            <i (click)="cerrarSesion()" style="color: #612a20;" class="fa-solid fa-right-from-bracket"><a href="http://localhost:4200/home"></a></i>
                         </li>
                     </ng-template>
 
@@ -46,7 +46,7 @@
                                 <a class="nav-link" href="#"><i class="fas fa-search" style="color: #612a20;"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"
+                                <a class="nav-link" routerLink="/carrito"><i class="fas fa-shopping-cart"
                                         style="color: #612a20;"></i></a>
                             </li>
 

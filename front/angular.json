@@ -28,6 +28,7 @@
                             "src/styles.css",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "node_modules/sweetalert2/dist/sweetalert2.min.css",
+                            "node_modules/hover.css/css/hover-min.css",
                             "src/styles.css"
                         ],
                         "scripts": [
@@ -140,4 +141,4 @@
     },
 "cli": {
     "analytics": "f2444660-649d-4815-87d5-fb9644a4eb49"
-},
+}

@@ -1,34 +1,81 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ProductosService } from "../../services/productos.service";
 import { Productos } from "../../models/productos";
+import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-checkout',
-  templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css']
+    selector: 'app-checkout',
+    templateUrl: './checkout.component.html',
+    styleUrls: ['./checkout.component.css']
 })
 
-export class CheckoutComponent {}
+export class CheckoutComponent implements OnInit {
 
 
-//     item : Productos[] = []
+    productosCarrito: any = [];
+    hayProductos!: boolean
+    precioTotal: number = 0
+    contador: any = []
 
-//     constructor(private _productos: ProductosService) {}
+    constructor(private _productosService: ProductosService, private el: ElementRef) { }
+    ngOnInit(): void {
 
-//     ngOnInit(): void {
-//         this.getProducto(identificador:string)
-//     }
+        this.carritoRecorrido()
 
-//     // getProducto(){
-//     // this._productos.getProducto().subscribe((data:any)=> {
-//     //   this.item=data
-//     // })
-// getProducto(identificador:string){
-//   this._productos.getProducto(identificador).subscribe(
-//     data =>{
-//     this.item= data.data
-//     console.log(this.item)
-//   })
-// }
+    }
 
-//     }
+    carritoRecorrido() {
+        if (sessionStorage.getItem("carrito") != null) {
+            this.precioTotal = 0
+            this.hayProductos = true
+            this.productosCarrito = JSON.parse(sessionStorage.getItem("carrito")!)
+            console.log(this.productosCarrito)
+            this.productosCarrito.forEach((productoC: any) => {
+                this.precioTotal = this.precioTotal + (productoC.precio * productoC.contador);
+                console.log(this.precioTotal);
+
+                this.contador = productoC.contador
+            });
+        } else {
+            this.hayProductos = false
+        }
+    }
+
+    quitarProducto(posicionArray: any) {
+        console.log(posicionArray)
+        if (this.productosCarrito[posicionArray].contador == 1) {
+            this.productosCarrito.splice(posicionArray, 1)
+        } else {
+            this.productosCarrito[posicionArray].contador = this.productosCarrito[posicionArray].contador - 1
+        }
+        sessionStorage.setItem("carrito", JSON.stringify(this.productosCarrito))
+
+        if (sessionStorage.getItem("carrito") == null || sessionStorage.getItem("carrito") == "[]") {
+            sessionStorage.removeItem("carrito")
+        }
+        this.carritoRecorrido()
+
+    }
+
+
+
+    agregarProducto(posicionArray: any) {
+        console.log(posicionArray)
+        this.productosCarrito[posicionArray].contador = this.productosCarrito[posicionArray].contador + 1
+        console.log(this.productosCarrito);
+        sessionStorage.setItem("carrito", JSON.stringify(this.productosCarrito))
+        this.carritoRecorrido()
+
+    }
+
+    finalizarC() {
+        Swal.fire({
+            title: 'Gracias por tu compra!',
+            text: 'Vuelve pronto',
+            imageUrl: 'https://cdn.memegenerator.es/descargar/14248351',
+            imageWidth: 400,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+        })
+    }
+}

@@ -1,104 +1,184 @@
 /* IMAGEN GRANDE PARTE DE ARRIBA */
-.homeImage    {
-  height: 630px;
-  position: relative;
+.homeImage {
+    height: 500px;
+    position: relative;
+    width: 100%;
 }
 
-.homeDiv    {
-  position: absolute;
-  margin-top: -450px;
-  margin-left: 10%;
-  font-family: 'karla_regular';
-  color: var(--pandacream);
-
-}
-
-.homeDiv  h1  {
-  font-family: 'karla_bold';
-  font-size: 7rem;
-  line-height: 80%;
-  letter-spacing: -5px;
-}
-.homeDiv  h3  {
-  font-family: 'karla_bold';
-  font-size: 2rem;
-}
-.homeDiv  h5  {
-  margin-top: 40px;
+.homeDiv {
+    position: absolute;
+    margin-top: -450px;
+    margin-left: 10%;
+    font-family: 'karla_regular';
+    color: var(--pandacream);
 
 }
 
-.homeDiv button   {
-  height: 60px;
-  width: 300px;
-  font-family: 'karla_regular';
-  color: var(--pandacream);
-  background-color: var(--pandared);
-  font-size: 2rem;
-  margin-top: 50px;
-  border-radius: 10px;
+.homeDiv h1 {
+    font-family: 'karla_bold';
+    font-size: 7rem;
+    line-height: 80%;
+    letter-spacing: -5px;
+}
+
+.homeDiv h3 {
+    font-family: 'karla_bold';
+    font-size: 2rem;
+}
+
+.homeDiv h5 {
+    margin-top: 40px;
+
+}
+
+.homeDiv button {
+    height: 60px;
+    width: 300px;
+    font-family: 'karla_regular';
+    color: var(--pandacream);
+    background-color: var(--pandared);
+    font-size: 2rem;
+    margin-top: 50px;
+    border-radius: 10px;
 }
 
 /* COMO FUNCIONA E ICONOS */
 
-.bgIconos   {
-  background-color: var(--pandacream);
+.bgIconos {
+    background-color: var(--pandacream);
+    padding-top: 30px;
 }
 
-.imgIconos img   {
-  width: 60%;
+.imgIconos img {
+    width: 60%;
 
 }
 
-.imgIconos2   {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+.imgIconos2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.tituloIconos   {
-  font-family: 'karla_bold' !important;
-  font-size: 2rem;
+.tituloIconos {
+    font-family: 'karla_bold' !important;
+    font-size: 2rem;
 }
 
-.imgIconos2 span  {
-  padding-top: 20px;
-  font-family: 'karla_regular';
+.imgIconos2 span {
+    padding-top: 20px;
+    font-family: 'karla_regular';
 }
 
 /* PRODUCTOS Y BOTONES */
 
-.bgProductos    {
-  background-color: var(--pandacream);
+.bgProductos {
+    background-color: var(--pandacream);
+    padding-bottom: 100px;
+    padding-top: 30px;
 }
 
-.tituloProductos    {
-  color: var(--pandabrown);
-  font-family: 'karla_bold';
-  font-size: 5rem;
-  line-height: 80%;
-  padding-top: 30px;
-  letter-spacing: -5px;
+.tituloProductos {
+    color: var(--pandabrown);
+    font-family: 'karla_bold';
+    font-size: 5rem;
+    line-height: 80%;
+    padding-top: 30px;
+    letter-spacing: -5px;
 }
 
-.btnProductos button  {
-  height: 60px;
-  width: 300px;
-  font-family: 'karla_bold';
-  color: var(--pandacream);
-  background-color: var(--pandablue);
-  font-size: 2rem;
-  margin: 50px;
-  border-radius: 10px;
+.btnProductos button {
+    height: 60px;
+    width: 300px;
+    font-family: 'karla_bold';
+    color: var(--pandacream);
+    background-color: var(--pandablue);
+    font-size: 2rem;
+    margin: 50px;
+    border-radius: 10px;
 }
 
-.imgProductos img   {
-  width: 50%;
+.botonesProductos2 {
+    width: 200px;
+    height: 30px;
+    background-color: var(--pandared);
+    color: var(--pandacream);
+    margin-top: 20px;
+    margin-left: 40px;
+    border-radius: 7px;
 }
+
+.nombreProducto {
+    font-family: 'karla_bold';
+    font-size: 2rem;
+    letter-spacing: -1px;
+    padding-left: 40px;
+}
+
+.precioProducto {
+    font-family: 'karla_regular';
+    padding-left: 40px;
+}
+
+.imgProductos   {
+    padding-left: 60px;
+}
+
+.imgProductos img {
+    width: 80%;
+}
+
+.detalleProducto span {
+    font-family: 'karla_regular';
+}
+
 /* NEWSLETTER */
 
+.formNewsletter {
+
+    background-color: var(--pandablue);
+    margin-top: 40px;
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    border-radius: 10px;
+    border: solid 2px var(--pandabrown);
+
+}
+
+.nlTitulo {
+    font-family: 'karla_bold';
+    font-size: 1.5rem;
+    color: var(--pandacream);
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.btnInput {
+    margin-top: 15px;
+    margin-left: 20px;
+
+}
+
+.btnInput input {
+    width: 250px;
+    height: 50px;
+    border: solid 2px var(--pandabrown);
+}
+
+.btnInput button {
+    background-color: var(--pandared);
+    margin-left: 20px;
+    border: solid 2px var(--pandabrown);
+    width: 160px;
+    height: 50px;
+}
+
+
 .newsLetterBg img {
-  height: 400px;
+    height: 400px;
+    position: relative;
+
 }

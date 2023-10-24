@@ -1,64 +1,91 @@
-<section>
-  <div class="mainCaja container-fluid">
-    <div class="row p-5 m-5 d-flex justify-content-between">
-      <div class="col-8 border-1" style="border: solid rgb(216, 215, 215);border-radius: 7px;">
-        <table class="table" >
-          <thead>
-            <tr>
-              <!-- //Al boton del carrrito etoca ponerle el id -->
-              <th scope="col">#</th>
-              <th scope="col" colspan="3">Producto</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Precio</th>
-            </tr>
-          </thead>
-          <tbody class="table-group-divider">
-            <tr>
-              <th scope="row">1</th>
-              <td colspan="3">caja 1</td>
-              <td>2 UND</td>
-              <td>80000 COP</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td colspan="3">caja 2</td>
-              <td>5 UNDS</td>
-              <td>150000 COP</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="3">caja 3</td>
-              <td>1 UNDS</td>
-              <td>40000 COP</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-4">
-        <div class="card" style="width: 100%;">
-          <div class="card-body">
-            <h6 class="card-title">Cupón de descuento</h6>
-            <div class="input-group mb-1">
-              <input type="text" class="form-control" placeholder="Código">
-              <button class="btn btn-outline-secondary" type="button">Aplicar</button>
+<ng-container *ngIf="!hayProductos; else seccionCarrito">
+   <div class="d-flex justify-content-center p-5"> <h1 style="font-family: 'karla_bold';">Agrega maricaditas varias al carrito, plox</h1> </div>
+<div class="d-flex justify-content-center">   <img style="width: 300px; height: 300px;" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGFhemx1ZDNpaDA2bHAwc285Y3p6Ynk5dWNuNTBsYjN0Yms1bHc5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUOxfjdJXA5d2aKO6k/giphy.gif" alt=""></div>
+</ng-container>
+<ng-template #seccionCarrito>
+    <section>
+        <div class="mainCaja container-fluid">
+            <div class="row p-5 m-5 d-flex justify-content-between">
+                <div class="col-8 border-1" style="border: solid rgb(216, 215, 215);border-radius: 7px;">
+                    <table class="table table-striped table-hover table-bordered table-responsive align-middle">
+                        <thead>
+                            <tr>
+                                <!-- //Al boton del carrrito etoca ponerle el id -->
+                                <th scope="col">#</th>
+                                <th scope="col" style="width: 30%;">Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let item of productosCarrito; let i = index">
+                                <th scope="row">{{item.nombre}}</th>
+                                <td>
+                                    <div class="text-center">
+                                        <img src="{{item.imagen}}" class="w-50">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex text-center justify-content-center">
+                                    <div><button class="{{item._id}}" (click)="quitarProducto(i)">-</button></div>
+                                    <div class="px-2">{{item.contador}}</div>
+                                    <div><button (click)="agregarProducto(i)">+</button></div>
+
+                                </div>
+                                </td>
+                                <td>{{item.precio | currency:"$"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <h6 class="card-title">Cupón de descuento</h6>
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control" placeholder="Código">
+                                <button class="btn btn-outline-secondary" type="button">Aplicar</button>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                               <div class="d-flex justify-content-between">
+                                <div> SubTotal </div>
+                               <div> {{precioTotal | currency:"$"}}</div>
+                               </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                <div> Descuentos </div>
+                               <div> {{0 | currency:"$"}}</div>
+                            </div>
+                            </li>
+                            <li class="list-group-item">
+
+                                <div class="d-flex justify-content-between">
+                                    <div> Gastos de Envío </div>
+                                   <div> {{0 | currency:"$"}}</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div> Total   </div>
+                                   <div> {{precioTotal | currency:"$"}}</div>
+                                </div>
+
+                            </li>
+                        </div>
+                        <div class="card-body">
+                            <button class="card-img-bottom" (click)="finalizarC()">Finalizar Compra</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Subtotal</li>
-            <li class="list-group-item">Descuentos</li>
-            <li class="list-group-item">Gastos de Envío</li>
-          </ul>
-          <div class="card-body">
-            <li class="list-group-item">Total</li>
-          </div>
-          <div class="card-body">
-            <button class="card-img-bottom">Finalizar Compra</button>
-          </div>
+            <div class="metodosPago d-flex justify-content-center">
+                <img src="assets/img/metodos-pago.png" alt="">
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="metodosPago d-flex justify-content-center">
-      <img src="assets/img/metodos-pago.png" alt="">
-    </div>
-  </div>
-</section>
+    </section>
+</ng-template>
