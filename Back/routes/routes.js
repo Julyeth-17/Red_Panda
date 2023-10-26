@@ -14,11 +14,11 @@ router.delete('/eliminar-usuario/:id', usuarioController.borrandoUsuario)
 
 //Productos
 router.post('/crear-producto', productosController.crearProducto)
-router.get('/obtener-productos',  productosController.obtenerTodosProductos)
+router.get('/obtener-productos', mdJWT.verificarToken, productosController.obtenerTodosProductos)
 router.get('/obtener-producto/:id', productosController.obtenerProducto)
 router.put('/actualizar-productos/:id', productosController.actualizandoProducto)
-router.delete('/eliminar-producto/:id', productosController.borrandoProducto)
+router.delete('/eliminar-productos/:id', productosController.borrandoProducto)
 
-router.post('/ingreso',sesionController.generarToken)
+router.post('/ingreso', sesionController.generarToken)
 
 module.exports = router
