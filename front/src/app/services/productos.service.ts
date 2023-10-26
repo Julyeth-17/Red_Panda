@@ -15,7 +15,6 @@ export class ProductosService {
 
     getProductos(): Observable<any> {
         const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
-
         return this.http.get(`${this.url}/obtener-productos`, {headers})
     }
 

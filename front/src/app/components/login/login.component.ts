@@ -24,18 +24,29 @@ export class LoginComponent {
 
     ingresoUsuario() {
 
-        this._usuarioService.postIngresoUsuario(this.userFormLogin).subscribe(respuestaAPI => {
-            sessionStorage.setItem('token', respuestaAPI.token);
-            console.log(respuestaAPI);
+        if (this.userFormLogin.correo != '' && this.userFormLogin.password != '') {
+            this._usuarioService.postIngresoUsuario(this.userFormLogin).subscribe(respuestaAPI => {
+                sessionStorage.setItem('token', respuestaAPI.token);
+                console.log(respuestaAPI);
 
-            this.router.navigate(['/admin-users'])
-        }, erro => {
+                this.router.navigate(['/admin-users'])
+            }, erro => {
+                console.log(erro)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Usuario y/o contraseña inválidos',
+                    iconColor: '#ff0d0d'
+                })
+            });
+        }else{
             Swal.fire({
                 icon: 'error',
-                title: 'Usuario y/o contraseña inválidos',
+                title: 'Digite su usuario y contraseña, bestia',
                 iconColor: '#ff0d0d'
             })
-        });
+        }
+
+
     }
 
     verpass() {

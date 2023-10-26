@@ -1,0 +1,64 @@
+<section class="container-fluid">
+
+    <div class="caja1 row">
+        <div class="m-4 align-items-center">
+            <h2 class="text-center" style="font-family: 'karla_regular';">{{ tituloPagina }}</h2>
+        </div>
+
+        <form [formGroup]="ingresoProducto" (ngSubmit)="enviarFormulario()" class="justify-content-center row"
+            #formProducto>
+
+            <div class="input mb-4 col-6">
+                <input placeholder="NOMBRE" type="text" required="" autocomplete="off" formControlName="nombre">
+                <div style="font-family: 'karla_regular';" *ngIf="ingresoProducto.get('nombre')!.hasError('required') && ingresoProducto.get('nombre')!.touched"
+                    class="fw-bold text-danger">El nombre del producto es requerido</div>
+            </div>
+
+            <div style="font-family: 'karla_regular';" class="input mb-4 col-6">
+                <input placeholder="URL IMAGEN" type="text" required="" autocomplete="off" formControlName="imagen">
+                <div *ngIf="ingresoProducto.get('imagen')!.hasError('required') && ingresoProducto.get('imagen')!.touched"
+                    class="fw-bold text-danger">Url de la imagen Requerida</div>
+                <div *ngIf="ingresoProducto.get('imagen')!.hasError('pattern') && ingresoProducto.get('imagen')!.touched"
+                    class="fw-bold text-danger">Url de la imagen invalida</div>
+            </div>
+
+            <div style="font-family: 'karla_regular';" class="input mb-4 col-6">
+                <textarea placeholder="DESCRIPCIÓN" type="text" required="" autocomplete="off" formControlName="descripcion"></textarea>
+                <div *ngIf="ingresoProducto.get('descripcion')!.hasError('required') && ingresoProducto.get('descripcion')!.touched"
+                    class="fw-bold text-danger">Descripción Requerida</div>
+            </div>
+
+            <div style="font-family: 'karla_regular';" class="input mb-4 col-6">
+                <input placeholder="PRECIO" type="number" required="" autocomplete="off" formControlName="precio">
+                <div *ngIf="ingresoProducto.get('precio')!.hasError('required') && ingresoProducto.get('precio')!.touched"
+                    class="fw-bold text-danger">Precio Requerido</div>
+                <div *ngIf="ingresoProducto.get('precio')!.hasError('pattern') && ingresoProducto.get('precio')!.touched"
+                    class="fw-bold text-danger">Precio Invalido</div>
+            </div>
+
+            <div style="font-family: 'karla_regular';" class="input mb-4 col-6">
+                <div><select required="" formControlName="disponible" name="vBooleano" [(ngModel)]="vBooleano">
+                        <option selected>DISPONIBILIDAD</option>
+                        <option [value]="true">True</option>
+                        <option [value]="false">False</option>
+                    </select></div>
+                <div *ngIf="ingresoProducto.get('disponible')!.hasError('required') && ingresoProducto.get('disponible')!.touched"
+                    class="fw-bold text-danger">Confirma Disponibilidad</div>
+            </div>
+
+            <div style="font-family: 'karla_regular';" class="input mb-4 col-6">
+                <input placeholder="UNIDADES" type="number" required="" autocomplete="off" formControlName="unidades">
+                <div *ngIf="ingresoProducto.get('unidades')!.hasError('required') && ingresoProducto.get('unidades')!.touched"
+                    class="fw-bold text-danger">Unidad Requerida</div>
+                <div *ngIf="ingresoProducto.get('unidades')!.hasError('pattern') && ingresoProducto.get('unidades')!.touched"
+                    class="fw-bold text-danger">Unidad Invalida</div>
+            </div>
+
+            <button type="submit" class="mb-4">
+                {{ txtBoton }}
+            </button>
+
+        </form>
+    </div>
+
+</section>

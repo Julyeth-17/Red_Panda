@@ -1,0 +1,64 @@
+.caja1 {
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    width: 50% !important;
+    height: 450px !important;
+    background-color: #f7e3cb;
+}
+
+input,
+textarea,
+select {
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #8e8b8bc2;
+    --main-color: #323232;
+    --bg-color: #fff;
+    font-family: 'karla_regular';
+    width: 270px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+
+}
+
+.input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+}
+
+.input:focus {
+    border: 2px solid var(--input-focus);
+}
+
+button {
+    background: #ff5c3a;
+    font-family: 'karla_regular';
+    width: 20%;
+    padding: 0.2em 0.8em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+}
+
+button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}

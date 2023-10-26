@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Productos } from 'src/app/models/productos';
 import { ProductosService } from 'src/app/services/productos.service'
+import { ActivatedRoute, Router} from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,7 +9,7 @@ import Swal from 'sweetalert2';
     templateUrl: './productos.component.html',
     styleUrls: ['./productos.component.css']
 })
-export class ProductosComponent {
+export class ProductosComponent implements OnInit {
 
     listaProductos: Productos[] = [];
 

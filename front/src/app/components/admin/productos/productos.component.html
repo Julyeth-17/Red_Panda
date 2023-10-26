@@ -1,4 +1,5 @@
 <section>
+
     <div class="container cajitaP"
         style="width: 100%; background-color: #f7e3cb; border-radius: 25px;">
         <h2 class="text-center py-4" style="font-family: 'karla_bold';">Listado de Productos</h2>
@@ -24,7 +25,7 @@
                     <td>{{productoData.unidades}}</td>
                     <td>
                         <button class="btn btn-dark mx-1 btnEditar"
-                            (click)="alerta()">Editar</button>
+                        [routerLink]="['/actualizar-productos', productoData._id]">Editar</button>
                         <button class="btn btn-danger mt-2 mx-1" (click)="eliminarProducto(productoData._id)">Eliminar</button>
                     </td>
                 </tr>

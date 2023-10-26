@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
     templateUrl: './registro.component.html',
     styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent {
+export class RegistroComponent implements OnInit {
 
     @ViewChild('txtPass2') inputPass2!: ElementRef
     @ViewChild('alertPass') alertPass!: ElementRef

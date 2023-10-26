@@ -17,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductosComponent } from './components/admin/productos/productos.component';
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { RegistroProductosComponent } from './components/admin/registro-productos/registro-productos.component';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
         HomeComponent,
         ProductosComponent,
         UsuariosComponent,
-        NosotrosComponent
+        NosotrosComponent,
+        RegistroProductosComponent
     ],
     imports: [
         BrowserModule,

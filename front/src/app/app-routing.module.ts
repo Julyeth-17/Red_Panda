@@ -11,21 +11,23 @@ import { ProductosComponent } from './components/admin/productos/productos.compo
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 import { GrillaDetallesComponent } from './components/grilla-detalles/grilla-detalles.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { RegistroProductosComponent } from './components/admin/registro-productos/registro-productos.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
+    { path: 'nosotros', component: NosotrosComponent },
     { path: 'usuario', component: RegistroComponent },
     { path: 'inicio-sesion', component: LoginComponent },
     { path: 'carrito', component: CheckoutComponent },
     { path: 'productos', component: DetalleCoreComponent },
     { path: 'admin-users', canMatch: [autorizacionGuard], component: UsuariosComponent},
-    { path: 'actualizar-productos/:id', component: DetalleCoreComponent},
+    { path: 'registro-productos', canMatch: [autorizacionGuard], component: RegistroProductosComponent},
+    { path: 'actualizar-productos/:id', component: RegistroProductosComponent},
     { path: 'admin-products', canMatch: [autorizacionGuard], component: ProductosComponent},
     { path: 'actualizar-usuarios/:id', component: RegistroComponent},
     { path: 'producto/:id', component: GrillaDetallesComponent },
-    { path: '404', component: Pagina404Component },
     { path: 'producto/:id', component: DetalleCoreComponent },
-    { path: 'nosotros', component: NosotrosComponent },
+    { path: '404', component: Pagina404Component },
     { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 
