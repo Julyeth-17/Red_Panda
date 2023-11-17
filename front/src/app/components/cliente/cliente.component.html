@@ -1,0 +1,68 @@
+<section class="bg-general-redPanda" style="background: url(assets/img/imagensota.jpg);">
+    <div class="container w-50 text-center cajitaOtra">
+
+        <form style="font-family: 'karla_regular';" [formGroup]="formularioRegistroCliente"
+            (ngSubmit)="enviarFormulario()">
+            <h2 class="mb-5 texto">{{ tituloPagina }}</h2>
+
+            <div class="">
+                <input type="text" class="input mb-4" formControlName="nombre" placeholder="NOMBRE">
+                <div *ngIf="formularioRegistroCliente.get('nombre')!.hasError('required') && formularioRegistroCliente.get('nombre')!.touched"
+                    class="fw-bold text-danger">Nombre Requerido</div>
+            </div>
+
+            <div class="">
+                <input type="text" class="input mb-4" formControlName="apellido" placeholder="APELLIDO">
+                <div *ngIf="formularioRegistroCliente.get('apellido')!.hasError('required') && formularioRegistroCliente.get('apellido')!.touched"
+                    class="fw-bold text-danger">Apellido Requerido</div>
+
+                <div class="">
+                    <input type="email" class="input mb-4" formControlName="email" placeholder="CORREO">
+                    <div *ngIf="formularioRegistroCliente.get('email')!.hasError('required') && formularioRegistroCliente.get('email')!.touched"
+                        class="fw-bold text-danger">Correo Requerido</div>
+                    <div *ngIf="formularioRegistroCliente.get('email')!.hasError('pattern') && formularioRegistroCliente.get('email')!.touched"
+                        class="fw-bold text-danger">Correo Invalido</div>
+                </div>
+
+                <div class="">
+                    <input [type]="changetype?'password':'text'" required="" class="input mb-4"
+                        formControlName="password" placeholder="CONTRASEÑA">
+
+                    <div *ngIf="formularioRegistroCliente.get('password')!.hasError('required') && formularioRegistroCliente.get('password')!.touched"
+                        class="fw-bold text-danger">Contraseña Requerida</div>
+                    <div *ngIf="formularioRegistroCliente.get('password')!.hasError('pattern') && formularioRegistroCliente.get('password')!.touched"
+                        class="fw-bold text-danger">La contraseña debe contener al menos un dígito, una minúscula,
+                        una
+                        mayúscula y
+                        un caracter especial</div>
+                    <div *ngIf="formularioRegistroCliente.get('password')!.hasError('minlength') && formularioRegistroCliente.get('password')!.touched"
+                        class="fw-bold text-danger bg-body-tertiary">La contraseña debe contener al menos 8
+                        caracteres
+                    </div>
+                </div>
+
+                <div class="">
+                    <input type="password" required="" class="input mb-4" autocomplete="off" id="txtPass2" #txtPass2
+                        (keyup)="rectificarPass()" placeholder="RECTIFICAR CONTRASEÑA">
+                    <div class="d-none" #alertPass>
+                        <div class="alert alert-danger" role="alert">
+                            Su contraseña no coincide
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label>
+                        Al crear una cuenta, aceptas los Términos y Condiciones de redpanda.co
+                    </label>
+                </div>
+
+                <div class="btnEnviar">
+                    <button style="width: 200px;" type="submit">{{txtBoton}}</button>
+                </div>
+
+                <h6 class="mt-4 mb-3">
+                    ¿Ya tienes una cuenta? <a style="text-decoration: none;" [routerLink]="'/inicio-sesion'">Ingresa
+                        aquí</a>
+                </h6>
+            </div>

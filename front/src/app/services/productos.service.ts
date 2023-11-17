@@ -19,7 +19,12 @@ export class ProductosService {
     }
 
     getProducto(idProducto:string):Observable<any>{
-        return this.http.get(`${this.url}/obtener-producto/${idProducto}`)
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('token')}`)
+        return this.http.get(`${this.url}/obtener-producto/${idProducto}`, {headers}, )
+    }
+
+    getProductoHome(idProducto:string):Observable<any>{
+        return this.http.get(`${this.url}/llamar-producto/${idProducto}`)
     }
 
     postProducto(producto: Productos):Observable<any>{

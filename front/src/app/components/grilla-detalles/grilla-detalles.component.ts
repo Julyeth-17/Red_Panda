@@ -25,7 +25,7 @@ export class GrillaDetallesComponent {
     obtenerProductos() {
 
         if (this.idProducto != null) {
-            this._productosService.getProducto(this.idProducto).subscribe(
+            this._productosService.getProductoHome(this.idProducto).subscribe(
                 (respuestaApi) => {
                     this.dataProducto = respuestaApi
                 },
@@ -38,7 +38,7 @@ export class GrillaDetallesComponent {
         }
     }
     agregarALCarrito(idProducto: string) {
-        this._productosService.getProducto(idProducto).subscribe((data: any) => {
+        this._productosService.getProductoHome(idProducto).subscribe((data: any) => {
             let productosCarrito: any = []
 
             if (sessionStorage.getItem("carrito") == null) {

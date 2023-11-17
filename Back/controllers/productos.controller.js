@@ -22,7 +22,28 @@ exports.obtenerTodosProductos = async (req, res) => {
         res.status(502).json({ msg: 'jejé no sé que paso' })
     }
 }
+
 exports.obtenerProducto = async (req, res) => {
+    try {
+        let regexIdMongo = /^[a-fA-F0-9]{24}$/
+        if (regexIdMongo.test(req.params.id)) {
+            const productoData = await Productos.findById(req.params.id)
+            console.log('file:usuario.controller.js:29 -> usuarioData: ', productoData)
+            if (!productoData) {
+                res.status(404).json({ msg: "Esto no existe manito" })
+            } else {
+                res.json(productoData)
+            }
+        } else {
+            res.status(418).json({ msg: 'el id no exis o no es correctisimo' })
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(502).json({ msg: 'jejé no sé que paso' })
+    }
+}
+
+exports.llamarProducto = async (req, res) => {
     try {
         let regexIdMongo = /^[a-fA-F0-9]{24}$/
         if (regexIdMongo.test(req.params.id)) {

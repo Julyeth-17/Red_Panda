@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { Pagina404Component } from './components/pagina404/pagina404.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { DetalleCoreComponent } from './components/detalle-core/detalle-core.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { GrillaDetallesComponent } from './components/grilla-detalles/grilla-detalles.component';
 import { HomeComponent } from './components/home/home.component';
@@ -18,6 +17,7 @@ import { ProductosComponent } from './components/admin/productos/productos.compo
 import { UsuariosComponent } from './components/admin/usuarios/usuarios.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { RegistroProductosComponent } from './components/admin/registro-productos/registro-productos.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
 
 @NgModule({
     declarations: [
@@ -27,14 +27,14 @@ import { RegistroProductosComponent } from './components/admin/registro-producto
         CheckoutComponent,
         Pagina404Component,
         NavbarComponent,
-        DetalleCoreComponent,
         ContactoComponent,
         GrillaDetallesComponent,
         HomeComponent,
         ProductosComponent,
         UsuariosComponent,
         NosotrosComponent,
-        RegistroProductosComponent
+        RegistroProductosComponent,
+        ClienteComponent
     ],
     imports: [
         BrowserModule,

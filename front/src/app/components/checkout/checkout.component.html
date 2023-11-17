@@ -1,6 +1,10 @@
 <ng-container *ngIf="!hayProductos; else seccionCarrito">
-   <div class="d-flex justify-content-center p-5"> <h1 style="font-family: 'karla_bold';">Agrega maricaditas varias al carrito, plox</h1> </div>
-<div class="d-flex justify-content-center">   <img style="width: 300px; height: 300px;" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGFhemx1ZDNpaDA2bHAwc285Y3p6Ynk5dWNuNTBsYjN0Yms1bHc5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUOxfjdJXA5d2aKO6k/giphy.gif" alt=""></div>
+    <div class="d-flex justify-content-center p-5">
+        <h1 style="font-family: 'karla_bold';">Agrega maricaditas varias al carrito, plox</h1>
+    </div>
+    <div class="d-flex justify-content-center"> <img style="width: 300px; height: 300px;"
+            src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGFhemx1ZDNpaDA2bHAwc285Y3p6Ynk5dWNuNTBsYjN0Yms1bHc5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUOxfjdJXA5d2aKO6k/giphy.gif"
+            alt=""></div>
 </ng-container>
 <ng-template #seccionCarrito>
     <section>
@@ -27,13 +31,13 @@
                                 </td>
                                 <td>
                                     <div class="d-flex text-center justify-content-center">
-                                    <div><button class="{{item._id}}" (click)="quitarProducto(i)">-</button></div>
-                                    <div class="px-2">{{item.contador}}</div>
-                                    <div><button (click)="agregarProducto(i)">+</button></div>
+                                        <div><button class="{{item._id}}" (click)="quitarProducto(i)">-</button></div>
+                                        <div class="px-2">{{item.contador}}</div>
+                                        <div><button (click)="agregarProducto(i)">+</button></div>
 
-                                </div>
+                                    </div>
                                 </td>
-                                <td>{{item.precio | currency:"$"}}</td>
+                                <td>{{item.precio | currency:"$"}} COP</td>
                             </tr>
                         </tbody>
                     </table>
@@ -49,36 +53,35 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                               <div class="d-flex justify-content-between">
-                                <div> SubTotal </div>
-                               <div> {{precioTotal | currency:"$"}}</div>
-                               </div>
+                                <div class="d-flex justify-content-between">
+                                    <div> SubTotal </div>
+                                    <div> {{precioTotal | currency:"$"}} COP</div>
+                                </div>
                             </li>
                             <li class="list-group-item">
                                 <div class="d-flex justify-content-between">
-                                <div> Descuentos </div>
-                               <div> {{0 | currency:"$"}}</div>
-                            </div>
+                                    <div> Descuentos </div>
+                                    <div> {{0 | currency:"$"}} COP</div>
+                                </div>
                             </li>
                             <li class="list-group-item">
 
                                 <div class="d-flex justify-content-between">
                                     <div> Gastos de Envío </div>
-                                   <div> {{0 | currency:"$"}}</div>
+                                    <div> {{0 | currency:"$"}} COP</div>
                                 </div>
                             </li>
                         </ul>
                         <div class="card-body">
                             <li class="list-group-item">
                                 <div class="d-flex justify-content-between">
-                                    <div> Total   </div>
-                                   <div> {{precioTotal | currency:"$"}}</div>
+                                    <div> Total </div>
+                                    <div> {{precioTotal | currency:"$"}} COP</div>
                                 </div>
-
                             </li>
                         </div>
                         <div class="card-body">
-                            <button class="card-img-bottom" (click)="finalizarC()">Finalizar Compra</button>
+                            <button class="card-img-bottom" [routerLink]="'/finalizar-compra'">Continuar con el pago</button>
                         </div>
                     </div>
                 </div>

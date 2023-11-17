@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     }
 
     agregarALCarrito(idProducto: string) {
-        this._productosService.getProducto(idProducto).subscribe((data: any) => {
+        this._productosService.getProductoHome(idProducto).subscribe((data: any) => {
             let productosCarrito: any = []
 
             if (sessionStorage.getItem("carrito") == null) {

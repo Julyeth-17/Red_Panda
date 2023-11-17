@@ -8,9 +8,6 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Correo</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">Postal</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
@@ -21,9 +18,6 @@
                     <td>{{productoData.nombre}}</td>
                     <td>{{productoData.apellido}}</td>
                     <td>{{productoData.email}}</td>
-                    <td>{{productoData.telefono}}</td>
-                    <td>{{productoData.ciudad}}</td>
-                    <td>{{productoData.postal}}</td>
                     <td>
                         <button class="btn btn-dark mx-1"
                             [routerLink]="['/actualizar-usuarios', productoData._id]">Editar</button>

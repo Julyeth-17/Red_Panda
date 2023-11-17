@@ -1,6 +1,6 @@
 .cajitaOtra{
-    padding: 40px;
-    width: 75%;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #f7e3cb;
     opacity: 90%;
     border-radius: 25px;
@@ -14,23 +14,16 @@
     padding: 100px 0;
 }
 
-.eyeicon {
-    position: relative;
-    right: -250px;
-    top: -31px;
-    cursor: pointer;
-}
-
 /* CSS inputs */
 
 .input {
-    display: block;
     --input-focus: #2d8cf0;
     --font-color: #323232;
     --font-color-sub: #8e8b8bc2;
     --bg-color: #fff;
     --main-color: #323232;
-    width: 100%;
+    display:inline-block;
+    width: 270px;
     height: 40px;
     border-radius: 5px;
     border: 2px solid var(--main-color);
@@ -57,9 +50,9 @@
 /* CSS boton envio */
 
 button {
-    background: #0076d8;
+    background: #ff5c3a;
     font-family: inherit;
-    padding: 0.3em 1em;
+    padding: 0.3em 0.5em;
     font-weight: 900;
     font-size: 18px;
     border: 3px solid black;
